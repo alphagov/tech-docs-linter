@@ -1,0 +1,63 @@
+# from https://developers.google.com/style/abbreviations
+
+extends: conditional
+message: "Spell out '%s', if it's unfamiliar to the audience."
+link: 'https://developers.google.com/style/abbreviations'
+level: error
+ignorecase: false
+first: '\b([A-Z]{3,5})\b'
+second: '(?:\b[a-zA-Z]+ )+\(([A-Z]{3,5})\)'
+exceptions:
+  - API
+  - ASP
+  - CLI
+  - CPU
+  - CSS
+  - CSV
+  - DOM
+  - DPI
+  - FAQ
+  - GOV
+  - GCC
+  - GET
+  - GPU
+  - GTK
+  - GUI
+  - HTML
+  - HTTP
+  - HTTPS
+  - IDE
+  - JAR
+  - JSON
+  - JSX
+  - LESS
+  - LLDB
+  - NET
+  - NOTE
+  - NVDA
+  - OSS
+  - PATH
+  - PDF
+  - PHP
+  - POST
+  - RAM
+  - REPL
+  - RSA
+  - SCM
+  - SCSS
+  - SDK
+  - SQL
+  - SSH
+  - SSL
+  - SVG
+  - TBD
+  - TCP
+  - TODO
+  - URI
+  - URL
+  - USB
+  - UTF
+  - XML
+  - XSS
+  - YAML
+  - ZIP

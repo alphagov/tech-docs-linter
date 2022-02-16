@@ -1,0 +1,8 @@
+# from https://github.com/errata-ai/Google and GOV.UK style
+
+extends: occurrence
+message: "Try to keep sentences short (<= 25 words)."
+scope: sentence
+level: warning
+max: 25
+token: '(\b(\w+)\b)'

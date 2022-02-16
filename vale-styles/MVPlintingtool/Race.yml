@@ -1,0 +1,22 @@
+# from https://www.gov.uk/guidance/style-guide/a-to-z-of-gov-uk-style
+
+---
+extends: substitution
+message: Use '%s' instead of '%s'.
+ignorecase: true
+level: error
+action:
+  name: replace
+swap:
+  black list: block list
+  blacklist: blocklist
+  blacklisted: blocklisted
+  blacklisting: blocklisting
+  master: primary
+  masters: primaries
+  slave: secondary
+  slaves: secondaries
+  white list: allow list
+  whitelist: allow
+  whitelisted: allowed
+  whitelisting: allowing
