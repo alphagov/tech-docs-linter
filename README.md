@@ -15,7 +15,7 @@ The linting tool will run against any documentation in the `lintingtest\source` 
 
 1. Open a terminal window.
 2. Navigate to the `lintingtest` folder.
-3. Run the command `vale source/*.*`
+3. Run the command `vale source/*.*`.
 
 ### Check the results
 You'll see any issues the linting tool has detected in your terminal. Each documentation file you tested has separate results which are listed under the filename. There are roughly 4 columns, which show:
