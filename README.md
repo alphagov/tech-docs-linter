@@ -1,6 +1,6 @@
 
 # Linting tool prototype
-This repo contains a linting tool prototype to run automatic tests against documentation. It uses a tool called Vale with some customised rules. You can [find more information about Vale on its website](https://vale.sh/).  
+This repo contains a linting tool prototype to run tests against documentation. It uses a tool called Vale with some customised rules. You can [find more information about Vale on its website](https://vale.sh/).  
 
 ## Before you use the linting tool
 
