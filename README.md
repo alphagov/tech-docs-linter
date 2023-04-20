@@ -9,12 +9,12 @@ This repo contains a linting tool prototype to run automatic tests against docum
 3. Clone this repo.
 
 ## Put your documentation in the `source` folder
-The linting tool will run against any documentation in the `lintingtest2\source` folder. Put any documentation files you want to test in this folder. 
+The linting tool will run against any documentation in the `lintingtest\source` folder. Put any documentation files you want to test in this folder. 
 
 ## Run the linting tool
 
 1. Open a terminal window.
-2. Navigate to the `lintingtest2` folder.
+2. Navigate to the `lintingtest` folder.
 3. Run the command `vale source/*.*`
 
 ### Check the results
