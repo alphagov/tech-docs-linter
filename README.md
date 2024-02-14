@@ -1,29 +1,22 @@
 
-# Linting tool prototype
-This repo contains a linting tool prototype to run tests against documentation. It uses a tool called Vale with some customised rules. You can [find more information about Vale on its website](https://vale.sh/).  
+# Linting for technical writing
+This repo contains rules based on the [GOV.UK Technical Style guide](https://www.gov.uk/guidance/style-guide/technical-content-a-to-z) and is designed to work with the linting tool Vale. You can [find more information about Vale on its website](https://vale.sh/).
 
-## Before you use the linting tool
-
+## Installing the linter on your local machine
 1. Install [Homebrew](https://brew.sh/).
 2. Install [Vale](https://vale.sh/docs/vale-cli/installation/). 
 3. Clone this repo.
 
-## Put your documentation in the `source` folder
-The linting tool will run against any documentation in the `lintingtest\source` folder. Put any documentation files you want to test in this folder. 
+## Running the linter on your local machine
+To use the linter (Vale), you must provide a config file which describes where the rules for the linter are located. Vale must be run from the same directory as this config file. 
 
-## Run the linting tool
+For ease of use, we provide a config file with this repo that provides the path to the rules for technical writing, however you may prefer to use your own based on any further requirements you may have and store this at the root of your repository. 
 
-1. Open a terminal window.
-2. Navigate to the `lintingtest` folder.
-3. Run the command `vale source/*.*`.
+1. In a terminal window, navigate to this linter repo
+2. Run the command `vale` followed by the path of the directory or file to lint, for example: `vale .`, `vale ../team-manual`, `vale ../team-manual/source/new-starter-guide/*.erb`
 
-### Check the results
-You'll see any issues the linting tool has detected in your terminal. Each documentation file you tested has separate results which are listed under the filename. There are roughly 4 columns, which show:
+Errors raised by the linter will show for each file:
 - the line and character number of the issue
-- the severity level of the issue (for example, whether it's a warning or an error)
+- the severity level of the issue (error, warning, suggestion)
 - a description of the issue
-- the rule that flagged the issue, using the folder and rule filename
-
-
-
-
+- the path to the rule that flagged the issue
