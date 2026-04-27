@@ -13,10 +13,3 @@ Feature: Acronyms are defined in technical documentation
         And the acronym "is not" on the exceptions list
         And it "has" been defined in the first usage
         Then the linter should pass
-
-      Given a page
-
-
-
-
-
