@@ -7,20 +7,14 @@ Feature: Acronyms are defined in technical documentation
         And it "has not" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule
         Then the linter should fail with 1 error
-        And the error should say "something"
-
-        Given a page contains an acronym 
-        And the acronym "is not" on the exceptions list
-        And it "has not" been defined in the first usage
-        When the linter runs against the page with the "acronyms" rule
-        Then the linter should fail with 1 error
-        And the error should say "something"
+        And the error should include "must be defined in the first instance"
 
         Given a page contains an acronym 
         And the acronym "is not" on the exceptions list
         And it "has" been defined in the first usage
         Then the linter should pass
-        
+
+      Given a page
 
 
 

@@ -7,7 +7,7 @@ Feature: Well known acronyms are not defined in technical documentation
         And it "has" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule
         Then the linter should fail with "1" error
-        And the error should say "something"
+        And the error should include "something"
 
         Given a page contains an acronym 
         And the "is on the exceptions" list

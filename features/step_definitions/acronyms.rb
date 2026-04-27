@@ -65,9 +65,9 @@ Then('the linter should fail with {int} error') do |number_of_failures|
   expect(@vale_result_json.count).to eq number_of_failures 
 end
 
-Then('the error should say {string}') do |string|
+Then('the error should include {string}') do |error_message|
   expect(@vale_result_json[0]).to have_key("Message")
-  expect(@vale_result_json[0]["Message"]).to include("must be defined in the first instance")
+  expect(@vale_result_json[0]["Message"]).to include(error_message)
 end
 
 Then('the linter should pass') do

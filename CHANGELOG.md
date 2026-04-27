@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.0
+
+- Regenerated gemfile.lock bundled with ruby 3.0.0
+
 ## v0.2.0
 
 ### New features
