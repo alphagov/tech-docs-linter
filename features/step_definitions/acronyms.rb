@@ -18,9 +18,9 @@ end
 
 Given('the acronym {string} considered well known') do |is_not|
   if is_not == "is not"
-    @sub = "not-on-exceptions-list"
+    @sub = "not-recognised"
   elsif is_not == "is"
-    @sub = "exceptions"
+    @sub = "recognised"
   end
 end
 
@@ -33,13 +33,19 @@ Given('it {string} been defined in the first usage') do |has_not|
 end
 
 When('the linter runs against the page with the {string} rule') do |rule_name|
+  @file_to_be_tested = "build/#{@dir}/#{@sub}/#{@page}/"
+
+  # if vale finds no files it just passes.  This is to avoid false positive tests
+  expect(File).to exist(@file_to_be_tested)
+
   self.vale_result = ValeRunner.run(
-    file_path: "build/#{@dir}/#{@sub}/#{@page}/",
+    file_path: @file_to_be_tested,
     filter: rule_name
   )
   expect(vale_result.status).not_to be_nil
   expect(vale_result.status.signaled?).to be false
 end
+
 #  Json will be a response like:
 #{"path/to/something.html"=>[
 # {
@@ -59,8 +65,10 @@ Then('the linter should {string}') do |pass_or_fail|
   # we have specified a single page so we expect the top object length to be 1.  This is just a defensive test before we go to the actual errors
   if "pass" == pass_or_fail
     expect(vale_result.status.exitstatus).to eq(0)
+    expect(vale_result.json.size).to be 0
   elsif "fail" == pass_or_fail
     expect(vale_result.status.exitstatus).to eq(1)
+    expect(vale_result.json.size).to be > 0
   else
     raise NotImplementedError, "Unimplemented linter: #{pass_or_fail}"
   end
