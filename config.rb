@@ -26,7 +26,7 @@ after_build do |builder|
         :disable_external => false,
         :allow_hash_href => true,
         :empty_alt_ignore => true,
-        :extensions => [""],
+        :extensions => [],
         :log_level => ':warn',
       }
     ).run
