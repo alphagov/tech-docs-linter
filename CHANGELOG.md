@@ -1,4 +1,7 @@
 # Changelog
+## v0.3.1
+
+- Update Ruby dependencies.  Rebundled with Ruby 3.3.1
 
 ## v0.3.0
 
