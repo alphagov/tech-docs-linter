@@ -1,8 +1,8 @@
 Feature: Acronyms are defined in technical documentation
-    No-one likes likes to not know what an acronym means
+    No-one likes likes to not know what "an acronym" means
 
     Scenario: A page has been created with a single unknown acronym that has not been defined in full
-        Given a page contains an acronym
+        Given a page contains "an acronym"
         And the acronym "is not" considered well known
         And it "has not" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule
@@ -11,14 +11,14 @@ Feature: Acronyms are defined in technical documentation
         And the error should include "must be defined in the first instance"
 
     Scenario: A page has been created with a single unknown acronym that has been defined in full
-        Given a page contains an acronym
+        Given a page contains "an acronym"
         And the acronym "is not" considered well known
         And it "has" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule
         Then the linter should "pass"
 
     Scenario: A page has been created with a widley known acronym that has been defined in full
-        Given a page contains an acronym
+        Given a page contains "an acronym"
         And the acronym "is" considered well known
         And it "has" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule
@@ -29,7 +29,7 @@ Feature: Acronyms are defined in technical documentation
 #        And the error should include "something"
 
     Scenario: A page has been created with a widley known acronym, and not defined unnecessarily
-        Given a page contains an acronym
+        Given a page contains "an acronym"
         And the acronym "is" considered well known
         And it "has not" been defined in the first usage
         When the linter runs against the page with the "acronyms" rule

@@ -34,3 +34,15 @@ module ValeRunner
     )
   end
 end
+
+module ValeWorld
+  def vale_result
+    @vale_result
+  end
+
+  def vale_result=(result)
+    @vale_result = result
+  end
+end
+
+World(ValeWorld)

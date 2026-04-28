@@ -1,21 +1,3 @@
-require_relative "../support/run_vale_rule"
-
-module ValeWorld 
-  def vale_result
-    @vale_result
-  end
-
-  def vale_result=(result)
-    @vale_result = result
-  end
-end
-
-World(ValeWorld)
-
-Given('a page contains an acronym') do
-  @dir = "acronyms"
-end
-
 Given('the acronym {string} considered well known') do |is_not|
   if is_not == "is not"
     @sub = "not-recognised"
@@ -32,18 +14,8 @@ Given('it {string} been defined in the first usage') do |has_not|
   end
 end
 
-When('the linter runs against the page with the {string} rule') do |rule_name|
-  @file_to_be_tested = "build/#{@dir}/#{@sub}/#{@page}/"
-
-  # if vale finds no files it just passes.  This is to avoid false positive tests
-  expect(File).to exist(@file_to_be_tested)
-
-  self.vale_result = ValeRunner.run(
-    file_path: @file_to_be_tested,
-    filter: rule_name
-  )
-  expect(vale_result.status).not_to be_nil
-  expect(vale_result.status.signaled?).to be false
+def get_acronym_filepath
+  "build/#{@dir}/#{@sub}/#{@page}/"
 end
 
 #  Json will be a response like:
@@ -61,19 +33,6 @@ end
 #  }
 # ]
 #}
-Then('the linter should {string}') do |pass_or_fail|
-  # we have specified a single page so we expect the top object length to be 1.  This is just a defensive test before we go to the actual errors
-  if "pass" == pass_or_fail
-    expect(vale_result.status.exitstatus).to eq(0)
-    expect(vale_result.json.size).to be 0
-  elsif "fail" == pass_or_fail
-    expect(vale_result.status.exitstatus).to eq(1)
-    expect(vale_result.json.size).to be > 0
-  else
-    raise NotImplementedError, "Unimplemented linter: #{pass_or_fail}"
-  end
-
-end
 
 Then('the number of errors in the linter report should be {float}') do |number_of_errors|
   # we have specified a single page so we expect the top object length to be 1.  This is just a defensive test before we go to the actual errors
@@ -87,6 +46,3 @@ Then('the error should include {string}') do |error_message|
   expect(@vale_result_json[0]["Message"]).to include(error_message)
 end
 
-Given('the {string} list') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
