@@ -1,21 +1,21 @@
-Given('the acronym {string} considered well known') do |is_not|
-  if is_not == "is not"
-    @sub = "not-recognised"
-  elsif is_not == "is"
-    @sub = "recognised"
-  end
-end
+Given('a page contains {string} acronym') do |expected_number_of_acronyms|
+  @dir = "acronyms"
 
-Given('it {string} been defined in the first instance') do |has_not|
-  if has_not == "has"
-    @page = "is-defined"
-  elsif has_not == "has not"
-    @page = "not-defined"
+  if "a single uncommon undefined" == expected_number_of_acronyms
+    @page = "single-uncommon-undefined"
+  elsif "a single uncommon defined" == expected_number_of_acronyms
+    @page = "single-uncommon-defined"
+  elsif "a single common defined" == expected_number_of_acronyms
+    @page = "single-common-defined"
+  elsif "a single common undefined" == expected_number_of_acronyms
+    @page = "single-common-undefined"
+  else
+    raise NotImplementedError, "Unimplemented linter: #{expected_number_of_acronyms}"
   end
 end
 
 def get_acronym_filepath
-  "build/#{@dir}/#{@sub}/#{@page}/"
+  "build/acronyms/#{@page}.html"
 end
 
 #  Json will be a response like:

@@ -6,6 +6,8 @@ When('the linter runs against the page with the {string} rule') do |rule_name|
   else
     raise NotImplementedError, "Unimplemented linter: #{rule_name}"
   end
+
+  puts "==== Checking the file #{@file_to_be_tested} exists"
   # if vale finds no files it just passes.  This is to avoid false positive tests
   expect(File).to exist(@file_to_be_tested)
 

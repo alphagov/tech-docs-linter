@@ -6,18 +6,11 @@ FileUtils.mkdir_p(File.dirname(LOCKFILE))
 
 File.open(LOCKFILE, "w") do |f|
   f.flock(File::LOCK_EX)
-
-  unless File.exist?(File.join(BUILD_DIR, "index.html"))
+    # build a fresh site to make sure any changes are present
+    # don't clean after so that debugging is easier if needed
     FileUtils.rm_rf(BUILD_DIR)
     ok = system("bundle exec middleman build")
     raise "Middleman build failed" unless ok
-  end
 end
 
-
-at_exit do
-  # Optional cleanup; leave artefacts around if they help debugging
-  FileUtils.rm_rf(BUILD_DIR)
-  puts ">>>>>>> Testing finished"
-end
 
