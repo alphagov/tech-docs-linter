@@ -1,13 +1,3 @@
-Given('a page contains {string}') do |page_contents|
-  if "an acronym" == page_contents
-    @dir = "acronyms"
-  elsif "a common misspelling" == page_contents
-    @dir = "misspellings"
-  else
-    raise NotImplementedError, "Unimplemented linter: #{page_contents}"
-  end
-end
-
 When('the linter runs against the page with the {string} rule') do |rule_name|
   if "acronyms" == rule_name
     @file_to_be_tested = self.get_acronym_filepath
