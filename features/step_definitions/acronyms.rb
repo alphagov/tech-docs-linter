@@ -14,35 +14,28 @@ Given('a page contains {string} acronym') do |expected_number_of_acronyms|
   end
 end
 
+Given('a page contains {string} acronyms') do |types_of_acronyms|
+  if "multiple uncommon" == types_of_acronyms
+    @page = "multiple-uncommon"
+  elsif "multiple common" == types_of_acronyms
+    @page = "multiple-common"
+  elsif "3 common 3 uncommon" == types_of_acronyms
+    @page = "3-of-each"
+  elsif "3 common 4 uncommon" == types_of_acronyms
+    @page = "3-common-4-not"
+  end
+end
+
+Given('{string} of the acronyms have been defined') do |amount_of_acronyms|
+  if "all" == amount_of_acronyms
+    @page << "-fully-defined"
+  elsif "none defined" == amount_of_acronyms
+    @page << "-none-defined"
+  elsif "half defined" == amount_of_acronyms
+    @page << "-half-defined"
+  end
+end
+
 def get_acronym_filepath
   "build/acronyms/#{@page}.html"
 end
-
-#  Json will be a response like:
-#{"path/to/something.html"=>[
-# {
-#   "Action"=>{"Name"=>"", "Params"=>nil}, 
-#   "Span"=>[17, 19], 
-#   "Check"=>"tech-writing-style-guide.acronyms", 
-#   "Description"=>"", 
-#   "Link"=>"", 
-#   "Message"=>"'BDD' must be defined in the first instance", 
-#   "Severity"=>"error", 
-#   "Match"=>"BDD", 
-#   "Line"=>110
-#  }
-# ]
-#}
-
-Then('the number of errors in the linter report should be {float}') do |number_of_errors|
-  # we have specified a single page so we expect the top object length to be 1.  This is just a defensive test before we go to the actual errors
-  vale_result_key = vale_result.json.keys[0]
-  @vale_result_json = vale_result.json[vale_result_key]
-  expect(@vale_result_json.count).to eq number_of_errors
-end
-
-Then('the error should include {string}') do |error_message|
-  expect(@vale_result_json[0]).to have_key("Message")
-  expect(@vale_result_json[0]["Message"]).to include(error_message)
-end
-
