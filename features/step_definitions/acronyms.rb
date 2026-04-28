@@ -6,7 +6,7 @@ Given('the acronym {string} considered well known') do |is_not|
   end
 end
 
-Given('it {string} been defined in the first usage') do |has_not|
+Given('it {string} been defined in the first instance') do |has_not|
   if has_not == "has"
     @page = "is-defined"
   elsif has_not == "has not"
