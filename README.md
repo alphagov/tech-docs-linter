@@ -15,7 +15,7 @@ If you would like to suggest a change an existing rule, such as adding an acrony
 ## Installing the linter on your local machine
 
 1. Install [Homebrew](https://brew.sh/).
-1. Install [Vale](https://vale.sh/docs/vale-cli/installation/).
+2. Install [Vale](https://vale.sh/docs/vale-cli/installation/).
 
 ### Adding the tech-docs-linter as a package to your config file
 
@@ -26,12 +26,36 @@ To use the linter (Vale), you must provide a config file which describes where t
 By default, Vale must be run from the same directory as this config file, unless the `--config` flag is provided with a path.
 
 1. In a terminal window, navigate to your repo
-1. Run `vale sync` to download the latest tech-docs-linter package and unzip this to your `StylesPath` listed in your config file
-1. Run the command `vale .` to lint the entire repo or provide a path to a directory to lint only that directory for example: `vale source/new-starter-guide/*.erb`
+2. Run `vale sync` to download the latest tech-docs-linter package and unzip this to your `StylesPath` listed in your config file
+3. Run the command `vale .` to lint the entire repo or provide a path to a directory to lint only that directory for example: `vale source/new-starter-guide/*.erb`
+
+## Testing linting rules
+
+The linter contains a `cucumber` test suite, found in the `/features` directory.  Tests are written in using scenario based [Behavior Driven Development (BDD)](https://www.geeksforgeeks.org/software-testing/scenario-in-cucumber-testing/).  This approach means non-technical maintainers can understand and update the behavior of the linter, with support from technical colleagues to implement `step_definitions`.
+
+You can install cucumber using `bundle install` or `gem install cucumber`.  For more details see [the documentation](https://cucumber.io/docs/installation/ruby/).
+
+To run the full cucumber suite you can run the following command:
+
+`bundle exec cucumber`
+
+To run a single file add the filepath to the feature, for example:
+
+`bundle exec cucumber features/style_guide/misspellings.feature`
+
+To run a single scenario in a feature file, add the line number.  For example:
+
+`bundle exec cucumber features/rules/style_guide/acronyms.feature:29`
+
 
 ## Releasing an update to the linter
 
-Before releasing a new package make sure the CHANGELOG has been updated.
+Before releasing a new package you should:
+
+- make sure the CHANGELOG has been updated
+- add a new feature file to the [cucumber test suite](#testing-linting-rules) and define the rule
+- ensure all the tests pass
+
 To release an update:
 
 - change directory to the styles folder
