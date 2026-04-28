@@ -3,11 +3,11 @@ message: "'%s' must be defined in the first instance"
 level: error
 scope: text
 ignorecase: false
-first: '\b([A-Z]{3,5})\b'
-second: '(?:\b[A-Z|a-z|-]+ )+\(([A-Z]{3,5})\)'
+first: '(?<!/)\b([A-Z]{3,5})\b(?!/\b)(?!-\d)'
+second: '(?:\b[A-Za-z-]+ )+\(([A-Z]{3,5})\)'
 exceptions:
-# GOV.UK specific
-- GOV
+# Departmental
+- DSIT
 - GDS
 - CDDO
 - HMRC
@@ -17,12 +17,15 @@ exceptions:
 - DBS
 - NCSC
 
+# GOV.UK specific
+- GOV
+
 # GOV.UK One Login specific
 - ADR
 - RFC
 
 # Networking
-- DNS  
+- DNS
 - VPN
 - SSH
 - TLS
@@ -50,10 +53,10 @@ exceptions:
 - SDK
 
 # Configuration
-- YAML  
+- YAML
 - JSON
 - YYYY
- 
+
 # Generic
 - AWS
 - MIT
@@ -69,5 +72,5 @@ exceptions:
 - PDF
 - CPU
 
-# Amazon products 
+# Amazon products
 - SSM

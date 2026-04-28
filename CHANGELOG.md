@@ -2,7 +2,9 @@
 
 ## v0.3.0
 
-- Regenerated gemfile.lock bundled with ruby 3.0.0
+### New features
+
+- Extend the regex for acronym checks to exclude capitalised 3-5 letter words that are included either as part of URLs or in a style that matches Jira tickets. Reduction of false positives.
 
 ## v0.2.0
 

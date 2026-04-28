@@ -9,7 +9,7 @@ review_in: 6 months
 
 You must enrol with the DCS certificate authority (CA) before you can [raise certificate signing requests (CSRs)](/generate-keys-and-request-certificates/#create-a-certificate-signing-request-csr).
 
-You will need to sign your contract for the DCS pilot before you will be allowed to enrol with the CA. [Contact DCS support](https://dcs-pilot-docs.cloudapps.digital/support/#support) if you need help with your contract. 
+You will need to sign your contract for the DCS pilot before you will be allowed to enrol with the CA. [Contact DCS support](https://dcs-pilot-docs.cloudapps.digital/support/#support) if you need help with your contract.
 
 To help you enrol, the DCS CA needs contact information for certain people within your organisation.
 
@@ -72,3 +72,16 @@ If the DCS CA receives a certificate signing request from someone who is not an 
 Setting up a group inbox is optional but will help make sure you receive your certificates and renewal notices if your requesters or approvers are not available.
 
 If you set up a group inbox, the lead contact should [send an email to idappki@digital.cabinet-office.gov.uk](mailto:idappki@digital.cabinet-office.gov.uk) confirming the group inbox address.
+
+# Ensure your Jira Tickets don't trigger the vale linter
+
+You may have a Jira ticket, let's call it JIA-123.
+If you write this in your doc, it should not error.
+
+# Your URLS don't trigger the vale linter
+
+Hey... we all like a clean URL, but sometimes that's out of our control.
+Atlassian projects allow upcased URLs, like atlassian.net/wiki/spaces/BOOP/
+
+You generally can downcase them, but then you get a redirect, and we prefer canonical URLs.
+So... let's ensure vale doesn't trigger for those
