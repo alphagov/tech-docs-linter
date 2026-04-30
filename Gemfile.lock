@@ -63,18 +63,18 @@ GEM
       json
     contracts (0.17.3)
     csv (3.3.5)
-    cucumber (10.2.0)
+    cucumber (11.0.0)
       base64 (~> 0.2)
       builder (~> 3.2)
       cucumber-ci-environment (> 9, < 12)
-      cucumber-core (> 15, < 17)
+      cucumber-core (>= 16.2.0, < 17)
       cucumber-cucumber-expressions (> 17, < 20)
-      cucumber-html-formatter (> 21, < 23)
+      cucumber-html-formatter (> 21, < 24)
       diff-lcs (~> 1.5)
       logger (~> 1.6)
       mini_mime (~> 1.1)
       multi_test (~> 1.1)
-      sys-uname (~> 1.3)
+      sys-uname (~> 1.5)
     cucumber-ci-environment (11.0.0)
     cucumber-core (16.2.0)
       cucumber-gherkin (> 36, < 40)
@@ -84,7 +84,7 @@ GEM
       bigdecimal
     cucumber-gherkin (39.0.0)
       cucumber-messages (>= 31, < 33)
-    cucumber-html-formatter (22.3.0)
+    cucumber-html-formatter (23.1.0)
       cucumber-messages (> 23, < 33)
     cucumber-messages (32.3.1)
     cucumber-tag-expressions (8.1.0)
@@ -377,7 +377,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  cucumber (~> 10.2.0)
+  cucumber (~> 11.0.0)
   govuk_tech_docs
   html-proofer
   rspec (~> 3.13.2)
@@ -414,12 +414,12 @@ CHECKSUMS
   console (1.34.3) sha256=869fbd74697efc4c606f102d2812b0b008e4e7fd738a91c591e8577140ec0dcc
   contracts (0.17.3) sha256=e72e626413ea47099becb7b5683beb1c2ea902c69f5bad55c9258fe2b48314d7
   csv (3.3.5) sha256=6e5134ac3383ef728b7f02725d9872934f523cb40b961479f69cf3afa6c8e73f
-  cucumber (10.2.0) sha256=fdedbd31ecf40858b60f04853f2aa15c44f5c30bbac29c6a227fa1e7005a8158
+  cucumber (11.0.0) sha256=14bb964cc172999e9010fece2fad9f104044b055b3199230091894637a2a784c
   cucumber-ci-environment (11.0.0) sha256=0df79a9e1d0b015b3d9def680f989200d96fef206f4d19ccf86a338c4f71d1e2
   cucumber-core (16.2.0) sha256=592b58a95cf42feef8e5a349f68e363784ba3b6568ffbcf6776e38e136cf970b
   cucumber-cucumber-expressions (19.0.0) sha256=33208ff204732ac9bed42b46993a0a243054f71ece08579d57e53df6a1c9d93a
   cucumber-gherkin (39.0.0) sha256=46f51d87e910f41c3c5cee3b500028ca2b2e7149a413a8280b9a58cee2593e55
-  cucumber-html-formatter (22.3.0) sha256=f9768ed05588dbd73a5f3824c2cc648bd86b00206e6972d743af8051281d0729
+  cucumber-html-formatter (23.1.0) sha256=7789b4a792c876394b9604aeb66aa5cf4c61514473b7e712c76d5eaedcdd8cdf
   cucumber-messages (32.3.1) sha256=ddc88e4c1cf7afb96c06005b92a4a6f221a2fa435a8b4ca04677d215fd82771c
   cucumber-tag-expressions (8.1.0) sha256=9bd8c4b6654f8e5bf2a9c99329b6f32136a75e50cd39d4cfb3927d0fa9f52e21
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962

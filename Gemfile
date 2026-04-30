@@ -13,5 +13,5 @@ gem 'govuk_tech_docs'
 gem 'html-proofer'
 
 # Include the gems for testing
-gem 'cucumber', '~> 10.2.0'
+gem 'cucumber', '~> 11.0.0'
 gem 'rspec', '~> 3.13.2'
