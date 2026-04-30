@@ -37,6 +37,6 @@ body:
             When the linter runs against the page with the "words to avoid" rule
             Then the linter should fail
         
-        Add as many scenarios as you can think of to define the full behaviour of the rule
+        Add as many scenarios as you can think of to define the full behaviour of the rule.  You can see existing examples in `features/style_guide/*.feature`
     validations:
       required: false
