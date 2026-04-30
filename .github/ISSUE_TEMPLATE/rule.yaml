@@ -1,0 +1,42 @@
+name: Linter rule
+description: Either a new rule or an update to an existing one
+title: "[Rule]: "
+labels: ["linter-rule"]
+body:
+  - type: checkboxes
+    id: rule-type
+    attributes:
+      label: Is this
+      options:
+        - label: a suggestion for a new rule
+          required: false
+        - label: an update to an existing rule
+          required: false
+        - label: a suggestion to remove a rule
+          required: false
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Why is this change important
+      description: Describe in brief what you are wanting to change, and what the result will be
+    validations:
+      required: true
+
+  - type: textarea
+    id: behaviours
+    attributes:
+      label: Examples of new behaviour as a result of the change
+      description: We take a [Behaviour Driven Development](https://cucumber.io/docs/bdd/) (BDD) approach to working with our linter rules.  To help us understand your request, and speed up the development (if aproved) please outline the behaviour of your suggestion in a `Given -> When -> Then` format.
+      value: | 
+        For example:
+        
+        Scenario: Someone has created a page with a lot of new content, some of the words are over complicated
+            Given a page exists
+            And the page contains words from the words to avoid list
+            When the linter runs against the page with the "words to avoid" rule
+            Then the linter should fail
+        
+        Add as many scenarios as you can think of to define the full behaviour of the rule.  You can see existing examples in `features/style_guide/*.feature`
+    validations:
+      required: false
