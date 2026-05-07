@@ -1,5 +1,4 @@
-Feature: Acronyms are defined in technical documentation
-    No-one likes likes to not know what "an acronym" means
+Feature: Acronyms that are not on the exceptions list need to be defined in full the first time they are used.  If the linter finds any that fail this rule they should be added to the final output report
 
     Scenario: A page has been created with a single unknown acronym that has not been defined in full
         Given a page contains "a single uncommon undefined" acronym
