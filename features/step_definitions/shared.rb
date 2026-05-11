@@ -44,7 +44,7 @@ end
 # ]
 #}
 
-Then('the number of errors in the linter report should be {float}') do |number_of_errors|
+Then('the number of messages in the linter report should be {float}') do |number_of_errors|
   if number_of_errors < 1
     expect(vale_result.json.size).to be 0
   end
@@ -59,7 +59,12 @@ Then('the number of errors in the linter report should be {float}') do |number_o
 
 end
 
+Then('the error level should be {string}') do | error_level|
+  expect(@vale_result_json[0]["Severity"]).to eq(error_level)
+end
+
 Then('the error should include {string}') do |error_message|
   expect(@vale_result_json[0]).to have_key("Message")
   expect(@vale_result_json[0]["Message"]).to include(error_message)
 end
+
