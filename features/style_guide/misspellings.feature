@@ -4,6 +4,7 @@ Feature: Sometimes there are different ways to spell something.  The linter shou
     Given a page contains "a single" misspelling
     When the linter runs against the page with the "common-misspellings" rule
     Then the number of messages in the linter report should be 1
+    And the error level should be "error"
     And the error should include "The GOV.UK style guide recommends"
 
 
