@@ -6,16 +6,16 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     Given the page has "<content>"
     When the linter runs against the page with the "max sentence" rule
     Then the number of messages in the linter report should be <number_of_messages>
-    And the error level should be "warning"
-    And the message should include "Check sentences with more than 25 words to see if you can split them to make them clearer"
+    And the error level should be "<warning_or_blank>"
+    And the message should include "<message_or_blank>"
     Examples:
-      | content                            | number_of_messages |
-      | no content                         | 0                  |
-      | a single long sentence             | 1                  |
-      | a single short sentence            | 0                  |
-      | four short sentences               | 0                  |
-      | four long sentences                | 4                  |
-      | three long and six short sentences | 3                  |
+      | content                            | number_of_messages | warning_or_blank | message_or_blank                                                                          |
+      | no content                         | 0                  | blank            |                                                                                           |
+      | a single long sentence             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a single short sentence            | 0                  | blank            |                                                                                           |
+      | four short sentences               | 0                  | blank            |                                                                                           |
+      | four long sentences                | 4                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | three long and six short sentences | 3                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
   Scenario Outline: A page contains lists with lead in line and item sentences of different lengths
     Given the page has "<content>"
@@ -24,17 +24,17 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the number of long list items is <long_list_items>
     When the linter runs against the page with the "max sentence" rule
     Then the number of messages in the linter report should be <number_of_messages>
-    And the error level should be "warning"
-    And the message should include "Check sentences with more than 25 words to see if you can split them to make them clearer"
+    And the error level should be "<warning_or_blank>"
+    And the message should include "<message_or_blank>"
     Examples:
-      | content   | long_lead_in_lines | long_list_items | number_of_messages |
-      | one list  | 0                  | 0               | 0                  |
-      | one list  | 1                  | 0               | 1                  |
-      | one list  | 0                  | 1               | 1                  |
-      | two lists | 0                  | 0               | 0                  |
-      | two lists | 2                  | 0               | 2                  |
-      | two lists | 0                  | 2               | 2                  |
-      | two lists | 1                  | 1               | 2                  |
+      | content   | long_lead_in_lines | long_list_items | number_of_messages |warning_or_blank | message_or_blank                                                                          |
+      | one list  | 0                  | 0               | 0                  |blank            |  blank                                                                                         |
+      | one list  | 1                  | 0               | 1                  |warning      | Check sentences with more than 25 words to see if you can split them to make them clearer  |
+      | one list  | 0                  | 1               | 1                  |warning                    |     Check sentences with more than 25 words to see if you can split them to make them clearer         |
+      | two lists | 0                  | 0               | 0                  |blank                 | blank|
+      | two lists | 2                  | 0               | 2                  |warning                    |         Check sentences with more than 25 words to see if you can split them to make them clearer            |
+      | two lists | 0                  | 2               | 2                  |warning|Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | two lists | 1                  | 1               | 2                  |warning| Check sentences with more than 25 words to see if you can split them to make them clearer|
 
   Scenario Outline: A page has sentences containing or explaining acronyms
     Given the page has "<content>"
@@ -57,7 +57,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     Then the number of messages in the linter report should be <number_of_messages>
     And the message should include "<message>"
     Examples:
-      | content          | sentence_length | number_of_messages | message
+      | content          | sentence_length | number_of_messages | message                                                                                   |
       #    'https://token.account.gov.uk|' covers single colon and multiple full stops.  All 4 should be ignored and count as a single word.  Also covers email addresses.
       | a full url       | under 26 words  | 0                  | blank                                                                                     |
       | a full url       | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
@@ -77,11 +77,11 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     Then the number of messages in the linter report should be <number_of_messages>
     And the message should include "<message>"
     Examples:
-      | single_triple | sentence_length | number_of_messages | message |
-      | single          | under 26 words  | 0                  | blank   |
-      | single          | over 25 words  | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer   |
-      | triple          | under 26 words  | 0                  | blank   |
-      | triple          | over 25 words  | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer   |
+      | single_triple | sentence_length | number_of_messages | message                                                                                   |
+      | single        | under 26 words  | 0                  | blank                                                                                     |
+      | single        | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | triple        | under 26 words  | 0                  | blank                                                                                     |
+      | triple        | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
   Scenario Outline: A page contains code examples that are not inline
     Given the page has "a code block"
@@ -92,5 +92,5 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the message should include "<message>"
     Examples:
       | does_not |
-      | does |
+      | does     |
       | does_not |
