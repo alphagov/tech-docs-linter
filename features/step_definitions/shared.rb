@@ -63,8 +63,7 @@ Then('the error level should be {string}') do | error_level|
   expect(@vale_result_json[0]["Severity"]).to eq(error_level)
 end
 
-Then('the error should include {string}') do |error_message|
+And('the message should contain {string}') do |error_message|
   expect(@vale_result_json[0]).to have_key("Message")
   expect(@vale_result_json[0]["Message"]).to include(error_message)
 end
-
