@@ -1,19 +1,18 @@
 # https://www.gov.uk/guidance/content-design/writing-for-gov-uk#short-sentences
 # https://www.gov.uk/guidance/style-guide/a-to-z -> Sentence length
 Feature:  The style guide recommends sentences over 25 words should be split where possible.  If the linter finds any sentences over 25 words it should add a warning to the report.
-
+@passing
   Scenario Outline: A page contains content with sentences of different lengths
     Given the page has "<content>"
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
     And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
     Examples:
       | content                            | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
-      | no content                         | 0                  | nothing          | nothing                                                                                   |
       | a single long sentence             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | a single short sentence            | 0                  | nothing          | nothing                                                                                   |
-      | four short sentences               | 0                  | nothing          | nothing                                                                                   |
+      | a single short sentence            | 0                  | blank            | nothing                                                                                   |
+      | four short sentences               | 0                  | blank            | nothing                                                                                   |
       | four long sentences                | 4                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       | three long and six short sentences | 3                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
@@ -22,7 +21,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the number of items in the list is 3
     And the number of long lead in lines is <long_lead_in_lines>
     And the number of long list items is <long_list_items>
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
     And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
@@ -35,25 +34,24 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | two lists | 2                  | 0               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       | two lists | 0                  | 2               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       | two lists | 1                  | 1               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-
+@passing
   Scenario Outline: A page has sentences containing or explaining acronyms
     Given the page has "<content>"
-    And the total length of the sentence is "<sentence_length>" words
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
-    And the error level should be "warning"
-    And the message should contain "Check sentences with more than 25 words to see if you can split them to make them clearer"
+    And the error level should be "<warning_or_blank>"
+    And the message should contain "<message_or_nothing>"
     Examples:
-      | content                          | sentence_length | number_of_messages |
-      | a sentence expanding an acronym  | over 25 words   | 1                  |
-      | a sentence expanding an acronym  | under 26 words  | 0                  |
-      | a sentence containing an acronym | over 25 words   | 1                  |
-      | a sentence containing an acronym | under 26 words  | 0                  |
+      | content                                         | number_of_messages | warning_or_blank |message_or_nothing |
+      | a sentence over 25 words expanding an acronym   | 1                  | warning          |Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a sentence under 26 words expanding an acronym  | 0                  |blank             |nothing                                                                                   |
+      | a sentence over 25 words containing an acronym  | 1                  |warning           |Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a sentence under 26 words containing an acronym | 0                  |blank             |nothing                                                                                   |
 
   Scenario Outline: A page contains characters in the middle of sentences which would normally end them, for example 'version 2.2 of WCAG'
     Given the page has "<content>"
     And the total length of the sentence is "<sentence_length>" words
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
     And the message should contain "<message_or_nothing>"
     Examples:
@@ -73,7 +71,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the code block is "inline"
     And the code block is surrounded by "<single_triple>" backticks
     And the total length of the sentence is "<sentence_length>" words
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
     And the message should contain "<message_or_nothing>"
     Examples:
@@ -87,7 +85,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     Given the page has "a code block"
     And the code block is "not inline"
     And the page "<does_not>" have surrounding content
-    When the linter runs against the page with the "max sentence" rule
+    When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be 0
     And the message should contain "<message>"
     Examples:
