@@ -64,6 +64,10 @@ Then('the error level should be {string}') do | error_level|
 end
 
 And('the message should contain {string}') do |error_message|
-  expect(@vale_result_json[0]).to have_key("Message")
-  expect(@vale_result_json[0]["Message"]).to include(error_message)
+  if "blank" == error_message
+    expect(vale_result.json.size).to be 0
+  else
+    expect(@vale_result_json[0]).to have_key("Message")
+    expect(@vale_result_json[0]["Message"]).to include(error_message)
+    end
 end

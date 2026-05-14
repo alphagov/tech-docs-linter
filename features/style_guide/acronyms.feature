@@ -26,15 +26,15 @@ Feature: Acronyms that are not on the exceptions list need to be defined in full
 
   Scenario Outline: A page has been created with lots of new acronyms
     Given a page contains "<types_of_acronyms>" acronyms
-    And "<amount_of_acronyms>" of the acronyms have been defined
+    And "<how_many_of_the_acronyms>" of the acronyms have been defined
     When the linter runs against the page with the "acronyms" rule
     Then the number of messages in the linter report should be <number_of_messages>
     And the message should contain "<message_or_nothing>"
 
     Examples:
-      | types_of_acronyms   | amount_of_acronyms | number_of_messages |message_or_nothing |
+      | types_of_acronyms   | how_many_of_the_acronyms | number_of_messages |message_or_nothing |
       | multiple uncommon   | all                | 0                  |blank            |
       | multiple uncommon   | none defined       | 3                  |must be defined in the first instance |
-      | multiple common     | none defined       | 0                  |must be defined in the first instance |
+      | multiple common     | none defined       | 0                  |blank |
       | 3 common 3 uncommon | none defined       | 3                  |must be defined in the first instance |
       | 3 common 4 uncommon | half defined       | 2                  |must be defined in the first instance |
