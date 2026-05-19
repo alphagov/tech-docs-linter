@@ -5,8 +5,6 @@ When('the linter runs against the page with the {string} rule') do |rule_name|
     @file_to_be_tested = self.get_misspelling_filepath
   elsif "sentence-length" == rule_name
     @file_to_be_tested = self.get_max_sentence_filepath
-  elsif "list-item-length" == rule_name
-    @file_to_be_tested = self.get_list_item_length_filepath
   else
     raise NotImplementedError, "Unimplemented linter: #{rule_name}"
   end
@@ -38,7 +36,6 @@ end
 #}
 
 Then('the number of messages in the linter report should be {float}') do |number_of_errors|
-  puts ">>>#{vale_result}"
   if number_of_errors < 1
     expect(vale_result.json.size).to be 0
   end
