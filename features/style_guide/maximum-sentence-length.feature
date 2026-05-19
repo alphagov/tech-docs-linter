@@ -18,13 +18,15 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
     Examples:
-      | content                            | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
-      | a single long sentence             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | a single short sentence            | 0                  | blank            | nothing                                                                                   |
-      | four short sentences               | 0                  | blank            | nothing                                                                                   |
-      | four long sentences                | 4                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | three long and six short sentences | 3                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-    
+      | content                                 | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
+      | a single long sentence                  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a single short sentence                 | 0                  | blank            | nothing                                                                                   |
+      | four short sentences                    | 0                  | blank            | nothing                                                                                   |
+      | four long sentences                     | 4                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | three long and six short sentences      | 3                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a short sentence with a hyphenated word | 0                  | blank            | nothing                                                                                   |
+      | a long sentence with a hyphenated word  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+
   @passing
   Scenario Outline: A page has sentences containing or explaining acronyms
     Given the page has "<content>"
@@ -57,6 +59,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       # 'urn:fdc:gov:uk' should be one word.  Covers Uniform Resource Name (URN) used in wallet, aws etc
       | under 26 words with a URN            | 0                  | blank            | nothing                                                                                   |
       | over 25 words with a URN             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+
   @passing
   Scenario Outline: A page contains inline code examples
     Given the page has "a code block inline"
@@ -71,16 +74,15 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | single        | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
       | triple        | under 26 words  | 0                  | nothing                                                                                   |
       | triple        | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
-  @wip
+
+  @passing
   Scenario Outline: A page contains code examples that are not inline
     Given the page has "a code block not inline"
     And the page "<does_not>" have surrounding content
     When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be 0
-    And the message should contain "<message>"
+    And the message should contain "nothing"
     Examples:
       | does_not |
       | does     |
       | does_not |
-
-    # hyphens

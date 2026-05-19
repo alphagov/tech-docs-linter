@@ -9,6 +9,10 @@ Given('the page has {string}') do |content|
     @page = "four-long"
   elsif "three long and six short sentences" == content
     @page = "three-long-six-short"
+  elsif "a short sentence with a hyphenated word" == content
+    @page = "short-sentence-hyphen"
+  elsif "a long sentence with a hyphenated word" == content
+    @page = "long-sentence-hyphen"
   elsif "a sentence over 25 words expanding an acronym" == content
     @page = "long-expanding-acronym"
    elsif "a sentence under 26 words expanding an acronym" == content
@@ -32,7 +36,7 @@ Given('the page has {string}') do |content|
    elsif "a code block inline" == content
     @page = "inline-code-block"
    elsif "a code block not inline" == content
-    @page = "not-inline-code-block"
+    @page = "stand-alone"
    else
     raise NotImplementedError, "Unimplemented scenario: #{content}"
   end
@@ -82,12 +86,16 @@ And("the total length of the sentence is {string} words") do |sentence_length|
   else
     raise NotImplementedError, "Unimplemented scenario: the total length of the sentence is #{sentence_length} words"
   end
-
-  puts ">>>>>> looking for page #{@page}"
 end
 
-And(/^the page "([^"]*)" have surrounding content$/) do |arg|
-  pending
+And("the page {string} have surrounding content") do |does_not|
+  if "does" == does_not
+    @page << "-code-block-surrounded"
+  elsif "does_not" == does_not
+    @page << "-code-block"
+  else
+    raise NotImplementedError, "Unimplemented scenario: the page #{does_not} have surrounding content"
+  end
 end
 
 def get_max_sentence_filepath

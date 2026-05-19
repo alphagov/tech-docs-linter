@@ -36,7 +36,6 @@ end
 #}
 
 Then('the number of messages in the linter report should be {float}') do |number_of_errors|
-  # puts ">>>>> #{vale_result}"
   if number_of_errors < 1
     expect(vale_result.json.size).to be 0
   end
