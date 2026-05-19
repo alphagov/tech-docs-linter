@@ -1,7 +1,8 @@
 # https://www.gov.uk/guidance/content-design/writing-for-gov-uk#short-sentences
 # https://www.gov.uk/guidance/style-guide/a-to-z -> Sentence length
 Feature:  The style guide recommends sentences over 25 words should be split where possible.  If the linter finds any sentences over 25 words it should add a warning to the report.
-@passing
+
+  @passing
   Scenario Outline: A page contains content with sentences of different lengths
     Given the page has "<content>"
     When the linter runs against the page with the "sentence-length" rule
@@ -17,7 +18,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | three long and six short sentences | 3                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
   Scenario Outline: A page contains lists with lead in line and item sentences of different lengths
-    Given the page has "<content>"
+    Given the number of lists in the page is <content>
     And the number of items in the list is 3
     And the number of long lead in lines is <long_lead_in_lines>
     And the number of long list items is <long_list_items>
@@ -26,15 +27,16 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
     Examples:
-      | content   | long_lead_in_lines | long_list_items | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
-      | one list  | 0                  | 0               | 0                  | blank            | nothing                                                                                   |
-      | one list  | 1                  | 0               | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | one list  | 0                  | 1               | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | two lists | 0                  | 0               | 0                  | blank            | nothing                                                                                   |
-      | two lists | 2                  | 0               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | two lists | 0                  | 2               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | two lists | 1                  | 1               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
-@passing
+      | content | long_lead_in_lines | long_list_items | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
+      | 1       | 0                  | 0               | 0                  | blank            | nothing                                                                                   |
+      | 1       | 1                  | 0               | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | 1       | 0                  | 1               | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | 2       | 0                  | 0               | 0                  | blank            | nothing                                                                                   |
+      | 2       | 2                  | 0               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | 2       | 0                  | 2               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | 2       | 1                  | 1               | 2                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+
+  @passing
   Scenario Outline: A page has sentences containing or explaining acronyms
     Given the page has "<content>"
     When the linter runs against the page with the "sentence-length" rule
@@ -42,29 +44,30 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
     And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
     Examples:
-      | content                                         | number_of_messages | warning_or_blank |message_or_nothing |
-      | a sentence over 25 words expanding an acronym   | 1                  | warning          |Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | a sentence under 26 words expanding an acronym  | 0                  |blank             |nothing                                                                                   |
-      | a sentence over 25 words containing an acronym  | 1                  |warning           |Check sentences with more than 25 words to see if you can split them to make them clearer |
-      | a sentence under 26 words containing an acronym | 0                  |blank             |nothing                                                                                   |
+      | content                                         | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
+      | a sentence over 25 words expanding an acronym   | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a sentence under 26 words expanding an acronym  | 0                  | blank            | nothing                                                                                   |
+      | a sentence over 25 words containing an acronym  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | a sentence under 26 words containing an acronym | 0                  | blank            | nothing                                                                                   |
 
+  @passing
   Scenario Outline: A page contains characters in the middle of sentences which would normally end them, for example 'version 2.2 of WCAG'
     Given the page has "<content>"
-    And the total length of the sentence is "<sentence_length>" words
     When the linter runs against the page with the "sentence-length" rule
     Then the number of messages in the linter report should be <number_of_messages>
+    And the error level should be "<warning_or_blank>"
     And the message should contain "<message_or_nothing>"
     Examples:
-      | content          | sentence_length | number_of_messages | message_or_nothing                                                                        |
+      | content                              | number_of_messages | warning_or_blank | message_or_nothing                                                                        |
       #    'https://token.account.gov.uk|' covers single colon and multiple full stops.  All 4 should be ignored and count as a single word.  Also covers email addresses.
-      | a full url       | under 26 words  | 0                  | nothing                                                                                   |
-      | a full url       | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | under 26 words with a full url       | 0                  | blank            | nothing                                                                                   |
+      | over 25 words with a full url        | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       #   'version 2.2 of WCAG' should be considered 4 words.  This covers spacing around the word containing the full stop.
-      | a version number | under 26 words  | 0                  | nothing                                                                                   |
-      | a version number | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | under 26 words with a version number | 0                  | blank            | nothing                                                                                   |
+      | over 25 words with a version number  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       # 'urn:fdc:gov:uk' should be one word.  Covers Uniform Resource Name (URN) used in wallet, aws etc
-      | a URN            | under 26 words  | 0                  | nothing                                                                                   |
-      | a URN            | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
+      | under 26 words with a URN            | 0                  | blank            | nothing                                                                                   |
+      | over 25 words with a URN             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
   Scenario Outline: A page contains inline code examples
     Given the page has "a code block"
@@ -92,3 +95,5 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | does_not |
       | does     |
       | does_not |
+
+    # hyphens
