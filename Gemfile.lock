@@ -115,7 +115,7 @@ GEM
     google-protobuf (4.34.1-x86_64-linux-musl)
       bigdecimal
       rake (~> 13.3)
-    govuk_tech_docs (6.2.2)
+    govuk_tech_docs (6.2.3)
       autoprefixer-rails
       chronic
       concurrent-ruby
@@ -393,7 +393,7 @@ CHECKSUMS
   google-protobuf (4.34.1-x86_64-darwin) sha256=4dc498376e218871613589c4d872400d42ad9ae0c700bdb2606fe1c77a593075
   google-protobuf (4.34.1-x86_64-linux-gnu) sha256=87088c9fd8e47b5b40ca498fc1195add6149e941ff7e81c532a5b0b8876d4cc9
   google-protobuf (4.34.1-x86_64-linux-musl) sha256=8c0e91436fbe504ffc64f0bd621f2e69adbcce8ed2c58439d7a21117069cfdd7
-  govuk_tech_docs (6.2.2) sha256=d9b16d06bc634805bccffdfa8709be50cae6c2fa9c62ba79e739d0b4b3c9d147
+  govuk_tech_docs (6.2.3) sha256=b67f11a45257eab5c43dea24e1139a991c619e54cbed64d84a4ae7406d0cee90
   haml (6.4.0) sha256=b2e20652be52ac9a3be328e8ff411ad007e82fc4e78e1a5cdefad537a697cf6a
   hamster (3.0.0) sha256=5951e3a3ffd15ba854a976ac36ebae9469966f726034ffed0dccdb6d12d434d8
   hashie (5.1.0) sha256=c266471896f323c446ea8207f8ffac985d2718df0a0ba98651a3057096ca3870
