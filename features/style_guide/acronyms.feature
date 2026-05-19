@@ -33,8 +33,8 @@ Feature: Acronyms that are not on the exceptions list need to be defined in full
 
     Examples:
       | types_of_acronyms   | how_many_of_the_acronyms | number_of_messages |message_or_nothing |
-      | multiple uncommon   | all                | 0                  |blank            |
+      | multiple uncommon   | all                | 0                  |nothing            |
       | multiple uncommon   | none defined       | 3                  |must be defined in the first instance |
-      | multiple common     | none defined       | 0                  |blank |
+      | multiple common     | none defined       | 0                  |nothing |
       | 3 common 3 uncommon | none defined       | 3                  |must be defined in the first instance |
       | 3 common 4 uncommon | half defined       | 2                  |must be defined in the first instance |

@@ -10,7 +10,6 @@
 
 Feature:  The style guide recommends sentences over 25 words should be split where possible.  If the linter finds any sentences over 25 words it should add a warning to the report.
 
-  @passing
   Scenario Outline: A page contains content with sentences of different lengths
     Given the page has "<content>"
     When the linter runs against the page with the "sentence-length" rule
@@ -27,7 +26,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | a short sentence with a hyphenated word | 0                  | blank            | nothing                                                                                   |
       | a long sentence with a hyphenated word  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
-  @passing
+
   Scenario Outline: A page has sentences containing or explaining acronyms
     Given the page has "<content>"
     When the linter runs against the page with the "sentence-length" rule
@@ -41,7 +40,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | a sentence over 25 words containing an acronym  | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
       | a sentence under 26 words containing an acronym | 0                  | blank            | nothing                                                                                   |
 
-  @passing
+
   Scenario Outline: A page contains characters in the middle of sentences which would normally end them, for example 'version 2.2 of WCAG'
     Given the page has "<content>"
     When the linter runs against the page with the "sentence-length" rule
@@ -60,7 +59,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | under 26 words with a URN            | 0                  | blank            | nothing                                                                                   |
       | over 25 words with a URN             | 1                  | warning          | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
-  @passing
+
   Scenario Outline: A page contains inline code examples
     Given the page has "a code block inline"
     And the code block is surrounded by "<single_triple>" backticks
@@ -75,7 +74,7 @@ Feature:  The style guide recommends sentences over 25 words should be split whe
       | triple        | under 26 words  | 0                  | nothing                                                                                   |
       | triple        | over 25 words   | 1                  | Check sentences with more than 25 words to see if you can split them to make them clearer |
 
-  @passing
+
   Scenario Outline: A page contains code examples that are not inline
     Given the page has "a code block not inline"
     And the page "<does_not>" have surrounding content
