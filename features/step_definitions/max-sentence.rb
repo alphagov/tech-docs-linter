@@ -43,31 +43,6 @@ Given('the page has {string}') do |content|
 
 end
 
-
-
-And("the lead in line is {string}") do |short_long|
-  if "short" == short_long
-    @page << "short-lead"
-  elsif "long" == short_long
-    @page << "long-lead"
-  else
-    raise NotImplementedError, "Unimplemented scenario: the lead in line is #{content}"
-  end
-end
-
-And("there are {int} list items over 25 words long") do |long_item_count|
-  if 0 == long_item_count
-    @page << "-0-long-list-items"
-  elsif 1 == long_item_count
-    @page << "-1-long-list-items"
-  elsif 2 == long_item_count
-    @page << "-2-long-list-items"
-  else
-    raise NotImplementedError, "Unimplemented scenario: there are #{long_item_count} list items over 25 words long"
-  end
-end
-
-
 And("the code block is surrounded by {string} backticks") do |single_triple|
   if single_triple == "single"
     @page << "-single-ticks"
