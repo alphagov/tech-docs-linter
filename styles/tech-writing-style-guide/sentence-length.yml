@@ -4,4 +4,8 @@ scope: sentence
 level: warning
 max: 25
 
-token: '(`[^`]+`|https?://\S+|urn:\S+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\d+(?:\.\d+)+|[A-Za-z0-9]+(?:[’''-][A-Za-z0-9]+)*)'
+token: '(`[^`]+`|https?://\S+|urn:\S+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}|\d+(?:\.\d+)+|\b[A-Za-z0-9]+(?:[’''-][A-Za-z0-9]+)*\b)'
+
+#exceptions:
+#  - '^\s*[-*]\s+.*'     # bulleted lists
+#  - '^\s*\d+\.\s+.*'   # numbered lists
