@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.0
+
+## new features
+
+- added new rule for maximum sentence length
+- added behavioural tests for all existing rules
+
 ## v0.3.0
 
 ### New features
