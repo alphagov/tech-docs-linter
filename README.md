@@ -11,9 +11,7 @@ Errors raised by the linter will show for each file:
 - a description of the issue
 - the path to the rule that flagged the issue
 
-If you would like to suggest a change an existing rule, such as adding an acronym to our list of exceptions, please
-raise this in the [#ask-di-tech-writing-architecture](https://gds.slack.com/archives/C06V5UTTJNP) Slack channel, and it
-will be discussed in our regular forum.
+If you would like to suggest a new or updated rule please open a [new issue on this repository](https://github.com/alphagov/tech-docs-linter/issues).
 
 ## Installing the linter on your local machine
 
@@ -28,11 +26,13 @@ provided through the `Packages` field. Here is a [template](#template-vale-confi
 
 ## Rules
 
-| Name                  | Summary                                                       | Severity level | Found in file                                             |
-|-----------------------|---------------------------------------------------------------|----------------|-----------------------------------------------------------|
-| `acronyms`            | Acronyms should be defined the first time they are used.      | Error          | `styles/tech-writing-style-guide/acronyms.yml`            |
-| `common-misspellings` | Highlight words or service names that are commonly misspeleld | Error          | `styles/tech-writing-style-guide/common-misspellings.yml` |
-| `sentence-length`     | Highlight sentences with over 25 words.                       | Warning        | `styles/tech-writing-style-guide/sentence-length.yml`     |
+| Name                    | Summary                                                                                                           | Severity level | Found in file                                               |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------------------------------|
+| `acronyms`              | Acronyms should be defined the first time they are used.                                                          | Error          | `styles/tech-writing-style-guide/acronyms.yml`              |
+| `common-misspellings`   | Highlight words or service names that are commonly misspeleld                                                     | Error          | `styles/tech-writing-style-guide/common-misspellings.yml`   |
+| `sentence-length`       | Highlight sentences with over 25 words.                                                                           | Warning        | `styles/tech-writing-style-guide/sentence-length.yml`       |
+| `words-to-avoid`        | Check for any words or phrases on the `words to avoid` section of the style guides.                               | Error          | `styles/tech-writing-style-guide/words-to-avoid.yml`        |
+| `words-to-avoid-unless` | Check for any words or phrases on the `words to avoid` section of the style guides which have an 'unless' caveat. | Error          | `styles/tech-writing-style-guide/words-to-avoid-unless.yml` |
 
 ## Running the linter on your local machine
 
