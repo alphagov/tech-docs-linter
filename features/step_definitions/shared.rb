@@ -5,6 +5,8 @@ When('the linter runs against the page with the {string} rule') do |rule_name|
     @file_to_be_tested = self.get_misspelling_filepath
   elsif "sentence-length" == rule_name
     @file_to_be_tested = self.get_max_sentence_filepath
+  elsif ["words-to-avoid-unless", "words-to-avoid"].include? rule_name
+    @file_to_be_tested = self.get_words_to_avoid_filepath
   else
     raise NotImplementedError, "Unimplemented linter: #{rule_name}"
   end

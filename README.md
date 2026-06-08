@@ -32,7 +32,7 @@ provided through the `Packages` field. Here is a [template](#template-vale-confi
 | `common-misspellings`   | Highlight words or service names that are commonly misspeleld                                                     | Error          | `styles/tech-writing-style-guide/common-misspellings.yml`   |
 | `sentence-length`       | Highlight sentences with over 25 words.                                                                           | Warning        | `styles/tech-writing-style-guide/sentence-length.yml`       |
 | `words-to-avoid`        | Check for any words or phrases on the `words to avoid` section of the style guides.                               | Error          | `styles/tech-writing-style-guide/words-to-avoid.yml`        |
-| `words-to-avoid-unless` | Check for any words or phrases on the `words to avoid` section of the style guides which have an 'unless' caveat. | Error          | `styles/tech-writing-style-guide/words-to-avoid-unless.yml` |
+| `words-to-avoid-unless` | Check for any words or phrases on the `words to avoid` section of the style guides which have an 'unless' caveat. | Warning        | `styles/tech-writing-style-guide/words-to-avoid-unless.yml` |
 
 ## Running the linter on your local machine
 
