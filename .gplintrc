@@ -1,0 +1,65 @@
+{
+  "allow-all-caps": [
+    "error",
+    {
+      "Global": false,
+      "Description": false,
+      "ExampleHeader": false,
+      "ExampleBody": true
+    }
+  ],
+  "allow-all-lowercase": [
+    "error",
+    {
+      "Global": false,
+      "Description": false,
+      "Step": true,
+      "ExampleHeader": true,
+      "ExampleBody": true
+    }
+  ],
+  "file-name": [
+    "warn",
+    {
+      "style": "PascalCase",
+      "allowAcronyms": false
+    }
+  ],
+  "keywords-in-logical-order": [
+    "error",
+    {
+      "detectMissingKeywords": true
+    }
+  ],
+  "max-keywords": [
+    "warn",
+    {
+      "given": 3,
+      "when": 1,
+      "then": 4,
+      "onlyContiguous": true
+    }
+  ],
+  "max-scenarios-per-file": [
+    "warn",
+    {
+      "maxScenarios": 10,
+      "countOutlineExamples": false
+    }
+  ],
+  "no-dupe-scenario-names": [
+    "error",
+    "in-feature"
+  ],
+  "no-superfluous-tags": "warn",
+  "no-unnamed-features": "error",
+  "no-unnamed-scenarios": "error",
+  "no-unused-variables": "warn",
+  "no-background-only-scenario": "error",
+  "no-empty-background": "error",
+  "no-dupe-feature-names": "error",
+  "no-files-without-scenarios": "error",
+  "no-empty-file": "error",
+  "no-trailing-spaces": "error",
+  "use-and": "error"
+}
