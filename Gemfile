@@ -1,16 +1,17 @@
 # If you do not have OpenSSL installed, change
 # the following line to use 'http://'
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # For faster file watcher updates on Windows:
-gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw, :x64_mingw]
+gem "wdm", "~> 0.1.0", platforms: %i[mswin mingw x64_mingw]
 
 # Windows does not come with time zone data
-gem 'tzinfo-data', platforms: [:mswin, :mingw, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %i[mswin mingw x64_mingw jruby]
 
 # Include the tech docs gem
-gem 'govuk_tech_docs'
+gem "govuk_tech_docs"
 
 # Include the gems for testing
-gem 'cucumber', '~> 11.0.0'
-gem 'rspec', '~> 3.13.2'
+gem "cucumber", "~> 11.0.0"
+gem "rspec", "~> 3.13.2"
+gem "rubocop-govuk"
