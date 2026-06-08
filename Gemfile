@@ -12,5 +12,5 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :x64_mingw, :jruby]
 gem 'govuk_tech_docs'
 
 # Include the gems for testing
-gem 'cucumber', '~> 11.0.0'
+gem 'cucumber', '~> 11.1.0'
 gem 'rspec', '~> 3.13.2'
