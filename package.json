@@ -1,0 +1,9 @@
+{
+
+  "scripts": {
+    "featureLint": "gplint features/"
+  },
+  "devDependencies": {
+    "gplint": "^2.5.2"
+  }
+}
