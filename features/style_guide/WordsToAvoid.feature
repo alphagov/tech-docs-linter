@@ -1,6 +1,6 @@
 #https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/
 #https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/technical-a-to-z/
-Feature: The GOV.UK Style and Technical Style guides contain a list of "words to avoid" which should not be used in our content.  Some of these are strict, some are situation dependant.  If these words are found in the content, the linter should highlight them and give the advice or suggestion found in the style guide.
+Feature: The GOV.UK Style and Technical Style guides contain a list of "words to avoid" which should not be used in our content.  Some of these are strict, some are situation-dependent.  If the linter finds these words in some content, it should highlight the words and give the advice or suggestion found in the style guide.
 
   Scenario Outline: A page exists containing content matching the words to avoid
     Given a page contains content from the "<govuk_technical>" style guide words to avoid
