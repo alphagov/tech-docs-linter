@@ -1,0 +1,51 @@
+extends: substitution
+message: "From style guide words to avoid: \" '%s' instead of '%s'.\""
+link: https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/
+level: error
+ignorecase: true
+scope: text
+swap:
+  # main style guide
+  advance: use ‘improve’ or something more specific
+  collaborate: use ‘work with’
+  '(commit | pledge)': use ‘plan to [fulfill your commitment]’, or ‘we’re going to x’ where ‘x’ is a specific verb
+  counter: use ‘prevent’ or try to rephrase a solution to a problem
+  deliver: use ‘make’, ‘create’, ‘provide’ or a more specific term (pizzas, post and services are delivered - not abstract concepts like improvements)
+  dialogue: use ‘spoke to’ or ‘discussion’
+  disincentivise: use ‘discourage’ or ‘deter’
+  empower: use ‘allow’ or ‘give permission’
+  facilitate: say something specific about how you’re helping - for example, use ‘run’ if talking about a workshop
+  focus: use ‘work on’ or ‘concentrate on’
+  incentivise: use ‘encourage’ or ‘motivate’
+  initiate: use ‘start’ or ‘begin’
+  liaise:  use ‘work with’ or ‘work alongside’
+  overarching: usually superfluous but can use ‘encompassing’
+  progress: use ‘work on’ or ‘develop’ or ‘make progress’
+  streamline: use ‘simplify’ or ‘remove unnecessary administration’
+  transform: describe what you’re doing to change the thing
+  utilise: use ‘use’
+  drive: use ‘create’, ‘cause’ or ‘encourage’ instead (you can only drive vehicles, not schemes or people)
+  '(going | moving forward)': use ‘from now on’ or ‘in the future’ (it’s unlikely we are giving travel directions)
+  in order to: usually not needed - do not use it.  For technical documentation use ‘so you can’
+  'ring fencing': use ‘separate’ or when talking about budgets use ‘money that will be spent on x’
+#  technical style guide
+  action: as a verb - use ‘do’, as a noun - use ‘task’
+  allow: use ‘let’
+  assets: use ‘files’ or ‘documents’
+  consult: use ‘check’
+  '(easy | easily)':  this can demoralise users if they do not find it easy
+  enable: use ‘help’
+  ensure: use ‘make sure’
+  examine: use ‘check’, ‘assess’ or ‘review’
+  fulfil: use ‘meet’
+  inform: use ‘show’ or ‘tell’
+  interrogate: use ‘monitor’ or ‘track’
+  periodically: try to be specific
+  quick: this can demoralise users if they do not find it quick
+  'refer to': use ‘Read more about [xxx]’ for an internal link or ‘You can find out how to [xxx] on the yyy website’ for an external link
+  regularly: try to be specific
+  requires: use ‘needs’
+  'should the': use ‘if the’
+  'simple': this can demoralise users if they do not find it simple
+  'take place': use ‘happen’, or use active voice to start with the verb
+  underlying: this can usually be removed without losing the sentence’s meaning

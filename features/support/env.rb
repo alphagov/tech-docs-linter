@@ -6,11 +6,9 @@ FileUtils.mkdir_p(File.dirname(LOCKFILE))
 
 File.open(LOCKFILE, "w") do |f|
   f.flock(File::LOCK_EX)
-    # build a fresh site to make sure any changes are present
-    # don't clean after so that debugging is easier if needed
-    FileUtils.rm_rf(BUILD_DIR)
-    ok = system("bundle exec middleman build")
-    raise "Middleman build failed" unless ok
+  # build a fresh site to make sure any changes are present
+  # don't clean after so that debugging is easier if needed
+  FileUtils.rm_rf(BUILD_DIR)
+  ok = system("bundle exec middleman build")
+  raise "Middleman build failed" unless ok
 end
-
-

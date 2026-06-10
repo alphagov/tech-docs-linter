@@ -1,0 +1,15 @@
+inherit_gem:
+  rubocop-govuk:
+    - config/default.yml
+
+AllCops:
+  TargetRubyVersion: 3.3.0
+
+Layout/HeredocIndentation:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+
+Lint/NestedMethodDefinition:
+  Enabled: false

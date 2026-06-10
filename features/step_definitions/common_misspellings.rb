@@ -1,9 +1,9 @@
-Given('a page contains {string} misspelling') do |misspellings_expected|
+Given("a page contains {string} misspelling") do |misspellings_expected|
   @dir = "common-misspellings"
 
-  if "a single" == misspellings_expected
+  if misspellings_expected == "a single"
     @page = "single-misspelling"
-  elsif "no" == misspellings_expected
+  elsif misspellings_expected == "no"
     @page = "all-correct"
   else
     raise NotImplementedError, "Unimplemented linter: #{misspellings_expected}"

@@ -1,0 +1,25 @@
+extends: substitution
+message: "The style guide suggests: '%s' instead of '%s'."
+link: https://www.gov.uk/guidance/style-guide/a-to-z#words-to-avoid
+level: warning
+ignorecase: true
+scope: text
+swap:
+  # main style guide
+  agenda: use ‘plan’ (unless it’s for a meeting)
+  combat: use ‘solve’, ‘fix’ or something more specific (unless military)
+  deploy: use ‘use’ or if putting something somewhere use ‘build’, ‘create’ or ‘put into place’ (unless it’s military or software)
+  foster: use ‘encourage’ or ‘help’ (unless it’s children)
+  impact: use ‘have an effect on’ or ‘influence’ (unless talking about a collision)
+  key: usually not needed but can use ‘important’ or ‘significant’ (unless it unlocks something)
+  land: depending on context, use ‘get’ or ‘achieve’ (unless you’re talking about aircraft)
+  leverage: use ‘influence’ or ‘use’ (unless in the financial sense)
+  promote: use ‘recommend’ or ‘support’ (unless talking about an ad campaign or career advancement)
+  robust: depending on context, use ‘well thought out’ or ‘comprehensive’ (unless talking about a sturdy object)
+  'slim down': use ‘make smaller’ or ‘reduce the size’ (unless talking about one’s waistline)
+  strengthening: depending on context, use ‘increasing funding’ or ‘concentrating on’ or ‘adding more staff’ (unless it’s strengthening bridges or other structures)
+  tackle: use ‘stop’, ‘solve’ or ‘deal with’ (unless talking about fishing tackle or a physical tackle, like in rugby)
+  'drive out': use ‘stop’, ‘avoid’ or ‘prevent’ (unless it’s cattle)
+  '(hub | portal| one stop shop)': use ‘website’ or ‘service’ (unless those words are in the name of the website or service)
+# Technical style guide
+  '(detail | details)': (as a verb) use ‘explain’ or ‘tell’
