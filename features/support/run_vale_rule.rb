@@ -15,7 +15,7 @@ module ValeRunner
     args = ["vale", file_path, "--config", File.expand_path(".vale.ini", Dir.pwd), "--output=JSON"]
     if filter
       filter_string = ".Name=='tech-writing-style-guide.#{filter}'"
-      args << "--filter=#{filter_string}" 
+      args << "--filter=#{filter_string}"
     end
 
     stdout, stderr, status = Open3.capture3(*args) # stdout/stderr strings + Process::Status [1](https://docs.ruby-lang.org/en/master/Open3.html)[2](https://www.rubydoc.info/stdlib/open3/Open3.capture3)[3](https://www.honeybadger.io/blog/capturing-stdout-stderr-from-shell-commands-via-ruby/)
@@ -30,7 +30,7 @@ module ValeRunner
       stdout: stdout,
       stderr: stderr,
       status: status,
-      json: parsed
+      json: parsed,
     )
   end
 end
