@@ -51,11 +51,14 @@ exceptions:
 - SCSS
 - UUID
 - SDK
+- GET
+- POST
 
 # Configuration
 - YAML
 - JSON
 - YYYY
+- UNIX
 
 # Generic
 - AWS
@@ -69,8 +72,37 @@ exceptions:
 - SLA
 - UML
 - UTC
-- PDF
 - CPU
+- FAQ
+- PIN
+
+# Common in code
+- TRUE
+- FALSE
+- NOT
+- VALID
 
 # Amazon products
 - SSM
+
+# Filetypes
+- JPG
+- PDF
+- PNG
+- JFIF
+- EXIF
+- JPEG
+- GIF
+- TIFF
+
+
+# Industry standards
+- JWT
+
+# Qualifications
+- GCSE
+- PHD
+
+# Letters after names
+- OBE
+- MBE
