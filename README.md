@@ -68,7 +68,7 @@ Suggestions: 0
 The linter contains a `cucumber` test suite, found in the `/features` directory. Tests are written in using scenario
 based [Behavior Driven Development (BDD)](https://www.geeksforgeeks.org/software-testing/scenario-in-cucumber-testing/).
 This approach means non-technical maintainers can understand and update the behavior of the linter, with support from
-technical colleagues to implement `step_definitions`.
+technical colleagues to implement `step_definitions`.  If you are new to cucumber this repo contains an [example feature](/Example.feature). 
 
 You can install cucumber using `bundle install` or `gem install cucumber`. For more details
 see [the documentation](https://cucumber.io/docs/installation/ruby/).
