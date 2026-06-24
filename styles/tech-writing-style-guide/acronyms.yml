@@ -76,12 +76,6 @@ exceptions:
 - FAQ
 - PIN
 
-# Common in code
-- TRUE
-- FALSE
-- NOT
-- VALID
-
 # Amazon products
 - SSM
 
