@@ -50,7 +50,7 @@ GEM
     connection_pool (3.0.2)
     contracts (0.17.3)
     csv (3.3.5)
-    cucumber (11.1.0)
+    cucumber (11.1.1)
       base64 (~> 0.2)
       builder (~> 3.2)
       cucumber-ci-environment (> 9, < 12)
@@ -330,7 +330,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  cucumber (~> 11.1.0)
+  cucumber (~> 11.1.1)
   govuk_tech_docs
   rspec (~> 3.13.2)
   tzinfo-data
