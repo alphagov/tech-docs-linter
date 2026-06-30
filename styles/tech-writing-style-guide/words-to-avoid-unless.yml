@@ -8,6 +8,7 @@ swap:
   # main style guide
   agenda: use ‘plan’ (unless it’s for a meeting)
   combat: use ‘solve’, ‘fix’ or something more specific (unless military)
+  commit: unless you a talking about version control use ‘plan to [fulfill your commitment]’
   deploy: use ‘use’ or if putting something somewhere use ‘build’, ‘create’ or ‘put into place’ (unless it’s military or software)
   foster: use ‘encourage’ or ‘help’ (unless it’s children)
   impact: use ‘have an effect on’ or ‘influence’ (unless talking about a collision)
