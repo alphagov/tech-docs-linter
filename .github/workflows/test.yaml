@@ -1,0 +1,32 @@
+name: Test
+on:
+  workflow_call:
+
+jobs:
+  cucumber:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: ruby/setup-ruby@9eb537ca036ebaed86729dcb9309076e4c5c3b74 # v1.314.0
+        with:
+          ruby-version: "3.3.11"
+          bundler-cache: true
+
+      - name: Set up Vale
+        uses: vale-cli/vale-action@85f9f7f2c5f449ac0ae5b66662961bae3f77ca6a #v2.1.2
+        with:
+          version: "3.11.2"
+          files: "./features/support/cli.md"
+          fail_on_error: false
+          filter_mode: nofilter
+
+      - name: Add Vale to PATH
+        run: |
+          mkdir -p "$HOME/bin"
+          ln -sf "$HOME/vale" "$HOME/bin/vale"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Check Vale is available
+        run: vale --version
+
+      - run: bundle exec cucumber --color
