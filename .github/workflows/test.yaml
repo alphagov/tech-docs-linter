@@ -20,16 +20,13 @@ jobs:
           fail_on_error: false
           filter_mode: nofilter
 
-      - name: Inspect Vale install
+      - name: Add Vale to PATH
         run: |
-          ls -la "$HOME/vale"
-          find "$HOME/vale" -maxdepth 2 -type f -name vale -print
+          mkdir -p "$HOME/bin"
+          ln -sf "$HOME/vale" "$HOME/bin/vale"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
 
-
-#      - name: Add Vale to PATH
-#        run: echo "$HOME/vale" >> "$GITHUB_PATH"
-#
-#      - name: Check Vale is available
-#        run: vale --version
+      - name: Check Vale is available
+        run: vale --version
 #
 #      - run: bundle exec cucumber
