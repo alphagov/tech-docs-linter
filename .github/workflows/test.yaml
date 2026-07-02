@@ -20,6 +20,9 @@ jobs:
           fail_on_error: false
           filter_mode: nofilter
 
+      - name: Add Vale to PATH
+        run: echo "$HOME/vale" >> "$GITHUB_PATH
+
       - name: Check Vale is available
         run: vale --version
 
