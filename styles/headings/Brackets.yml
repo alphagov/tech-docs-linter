@@ -1,0 +1,7 @@
+extends: existence
+message: "Brackets should only be used in body text for additional context."
+level: suggestion
+scope: heading
+nonword: true
+tokens:
+  - '[\[\](){}<>]'

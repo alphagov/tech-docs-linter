@@ -1,0 +1,7 @@
+extends: existence
+message: "Do not put terminal punctuation such as full stops in section headings."
+level: error
+scope: heading
+nonword: true
+tokens:
+  - '[?!.,;:\-]\s*$'

@@ -1,0 +1,6 @@
+extends: occurrence
+message: "Consider shortening this heading to 65 characters or fewer. It contains %s characters."
+level: suggestion
+scope: heading
+max: 65
+token: '.'

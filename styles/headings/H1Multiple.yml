@@ -1,0 +1,5 @@
+extends: metric
+message: "Multiple H1 tags found. Each page should contain a single H1 tag."
+level: error
+formula: heading.h1
+condition: "> 1.0"

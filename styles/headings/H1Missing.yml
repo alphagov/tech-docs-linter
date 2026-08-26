@@ -1,0 +1,5 @@
+extends: metric
+message: "No H1 tag found. Each page should contain a single H1 tag."
+level: error
+formula: heading.h1
+condition: "== 0.0"
