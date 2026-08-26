@@ -1,0 +1,10 @@
+extends: existence
+message: "Skipping heading levels can be an accessibility issue. Check your page structure is correct."
+level: warning
+scope: raw
+nonword: true
+tokens:
+  - '(?is)<h1\b[^>]*>.*?</h1>(?:(?!<h[1-6]\b).)*<h[3-6]\b'
+  - '(?is)<h2\b[^>]*>.*?</h2>(?:(?!<h[1-6]\b).)*<h[4-6]\b'
+  - '(?is)<h3\b[^>]*>.*?</h3>(?:(?!<h[1-6]\b).)*<h[5-6]\b'
+  - '(?is)<h4\b[^>]*>.*?</h4>(?:(?!<h[1-6]\b).)*<h6\b'

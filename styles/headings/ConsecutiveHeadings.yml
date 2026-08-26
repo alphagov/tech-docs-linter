@@ -1,0 +1,7 @@
+extends: existence
+message: "Consider putting content between your headings to support screen-reading technology."
+level: suggestion
+scope: raw
+nonword: true
+tokens:
+  - '(?is)<h[1-6]\b[^>]*>.*?</h[1-6]>(?:\s|<!--.*?-->)*<h[1-6]\b[^>]*>'

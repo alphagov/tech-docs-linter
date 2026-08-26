@@ -22,8 +22,6 @@ Feature: Acronyms that are not on the exceptions list need to be defined in full
     When the linter runs against the page with the "acronyms" rule
     Then the number of messages in the linter report should be 0
 
-#add scenarios for multiple things on a page, some defined some not
-
   Scenario Outline: A page has been created with lots of new acronyms
     Given a page contains "<types_of_acronyms>" acronyms
     And "<how_many_of_the_acronyms>" of the acronyms have been defined
