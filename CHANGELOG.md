@@ -1,8 +1,23 @@
 # Changelog
 
+## v0.6.0
+
+
+### New features
+
+- added rules for headings
+- added behaviour tests for new rules
+
+## v0.5.0
+
+### Updates
+
+- make 'commit' a word to avoid unless 
+- add new acronyms to acronym exceptions list 
+
 ## v0.4.0
 
-## new features
+### New features
 
 - added new rule for maximum sentence length
 - added behavioural tests for all existing rules
