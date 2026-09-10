@@ -1,6 +1,6 @@
 extends: existence
 message: "Consider putting content between your headings to support screen reading."
-level: suggestion
+level: warning
 scope: raw
 nonword: true
 tokens:

@@ -1,6 +1,6 @@
 extends: occurrence
 message: "Consider shortening this heading to 65 characters or fewer. It contains %s characters."
-level: suggestion
+level: warning
 scope: heading
 max: 65
 token: '.'
