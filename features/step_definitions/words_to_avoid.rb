@@ -14,7 +14,7 @@ Given("the style guide rule {string} got exceptions") do |has_has_not|
   elsif has_has_not == "has not"
     @page << "with-no-exceptions"
   else
-    raise NotImplementedError, "Unimplemented styler guide rule: #{has_has_not}"
+    raise NotImplementedError, "Unimplemented style guide rule: #{has_has_not}"
   end
 end
 

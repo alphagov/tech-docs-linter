@@ -7,6 +7,8 @@ When("the linter runs against the page with the {string} rule") do |rule_name|
     @file_to_be_tested = get_max_sentence_filepath
   elsif %w[words-to-avoid-unless words-to-avoid].include? rule_name
     @file_to_be_tested = get_words_to_avoid_filepath
+  elsif %w[multiple-h1-tags H4 H5 H6 headings-with-no-content terminal-punctuation skipped-heading-levels consecutive-headings headings-length brackets-in-headings].include? rule_name
+    @file_to_be_tested = get_headings_filepath
   else
     raise NotImplementedError, "Unimplemented linter: #{rule_name}"
   end
