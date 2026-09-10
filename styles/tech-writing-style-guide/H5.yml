@@ -1,0 +1,6 @@
+extends: existence
+message: "You should not use heading tags greater than H4."
+level: error
+scope: heading.h5
+tokens:
+  - '.+'

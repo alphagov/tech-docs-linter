@@ -1,0 +1,12 @@
+extends: existence
+message: "Page headings can help users find the information they need. Consider splitting your content up."
+level: suggestion
+scope: raw
+nonword: true
+tokens:
+  - '(?is)<h1\b[^>]*>.*?</h1>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h1\b'
+  - '(?is)<h2\b[^>]*>.*?</h2>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h2\b'
+  - '(?is)<h3\b[^>]*>.*?</h3>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h3\b'
+  - '(?is)<h4\b[^>]*>.*?</h4>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h4\b'
+  - '(?is)<h5\b[^>]*>.*?</h5>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h5\b'
+  - '(?is)<h6\b[^>]*>.*?</h6>(?:(?!<h[1-6]\b).)*?\w+(?:(?!<h[1-6]\b).)*?<h6\b'

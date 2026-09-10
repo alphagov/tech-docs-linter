@@ -1,0 +1,24 @@
+#A diagram anyone?
+
+Lets show this flow
+
+## This one will be a diagram without a lead in line
+
+<pre class="mermaid">
+flowchart LR
+  DEFINED("Defnie/refine assumption")
+  ASSUMPTION("Test assumption")
+  TEST("Assumption correct")
+  PROTO("Iterative prototyping")
+
+  DEFINED ~~~ ASSUMPTION ~~~ TEST ~~~  PROTO
+  DEFINED ----> ASSUMPTION ----> TEST -- yes -->   PROTO
+  TEST -- no --> DEFINED
+
+</pre>
+
+### Wow! That was wild
+
+Diagrams can be fun, but please use them responsibly.
+
+No diagrams were harmed in the making of this linter.

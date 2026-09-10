@@ -1,0 +1,6 @@
+extends: existence
+message: "Consider restructuring your content to avoid H4 tags."
+level: suggestion
+scope: heading.h4
+tokens:
+  - '.+'

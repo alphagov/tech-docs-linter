@@ -11,7 +11,8 @@ Errors raised by the linter will show for each file:
 - a description of the issue
 - the path to the rule that flagged the issue
 
-If you would like to suggest a new or updated rule please open a [new issue on this repository](https://github.com/alphagov/tech-docs-linter/issues).
+If you would like to suggest a new or updated rule please open
+a [new issue on this repository](https://github.com/alphagov/tech-docs-linter/issues).
 
 ## Installing the linter on your local machine
 
@@ -26,13 +27,23 @@ provided through the `Packages` field. Here is a [template](#template-vale-confi
 
 ## Rules
 
-| Name                    | Summary                                                                                                           | Severity level | Found in file                                               |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------------------------------|
-| `acronyms`              | Acronyms should be defined the first time they are used.                                                          | Error          | `styles/tech-writing-style-guide/acronyms.yml`              |
-| `common-misspellings`   | Highlight words or service names that are commonly misspeleld                                                     | Error          | `styles/tech-writing-style-guide/common-misspellings.yml`   |
-| `sentence-length`       | Highlight sentences with over 25 words.                                                                           | Warning        | `styles/tech-writing-style-guide/sentence-length.yml`       |
-| `words-to-avoid`        | Check for any words or phrases on the `words to avoid` section of the style guides.                               | Error          | `styles/tech-writing-style-guide/words-to-avoid.yml`        |
-| `words-to-avoid-unless` | Check for any words or phrases on the `words to avoid` section of the style guides which have an 'unless' caveat. | Warning        | `styles/tech-writing-style-guide/words-to-avoid-unless.yml` |
+The table below is a summary of the rules defined in `/styles/tech-writing-style-guide/`.
+
+| Name                       | Summary                                                                                                           | Severity level |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------|----------------|
+| `acronyms`                 | Acronyms should be defined the first time they are used.                                                          | Error          |
+| `common-misspellings`      | Highlight words or service names that are commonly misspelt.                                                      | Error          |
+| `brackets-in-headings`     | Check page headings for brackets.                                                                                 | Error          |
+| `consecutive-headings`     | Hilights sections that could be broken up using sub-headings.                                                     | Suggestion     |
+| `H4`                       | Hilight H4 headings for page structure review.                                                                    | Suggestion     |
+| `H5` and `H6`              | Check for headings greater than H4 as these should not be used.                                                   | Error          |
+| `headings-length`          | Highlight headings with over 65 words.                                                                            | Warning        |
+| `headings-with-no-content` | Check for headings that have no content between them (includes tables and diagrams without lead in lines).        | Warning        |
+| `skipped-heading-levels`   | Checks order of nested page headings for accessiblity.                                                            | Warning        |
+| `sentence-length`          | Highlight sentences with over 25 words.                                                                           | Warning        |
+| `words-to-avoid`           | Check for any words or phrases on the `words to avoid` section of the style guides.                               | Error          |
+| `terminal-punctuation`     | Check headings do not finish with sentence ending punction such as full stops or question marks.                  | Warning        |
+| `words-to-avoid-unless`    | Check for any words or phrases on the `words to avoid` section of the style guides which have an 'unless' caveat. | Warning        |
 
 ## Running the linter on your local machine
 
@@ -68,7 +79,8 @@ Suggestions: 0
 The linter contains a `cucumber` test suite, found in the `/features` directory. Tests are written in using scenario
 based [Behavior Driven Development (BDD)](https://www.geeksforgeeks.org/software-testing/scenario-in-cucumber-testing/).
 This approach means non-technical maintainers can understand and update the behavior of the linter, with support from
-technical colleagues to implement `step_definitions`.
+technical colleagues to implement `step_definitions`. If you are new to cucumber this repo contains
+an [example feature](/Example.feature).
 
 You can install cucumber using `bundle install` or `gem install cucumber`. For more details
 see [the documentation](https://cucumber.io/docs/installation/ruby/).

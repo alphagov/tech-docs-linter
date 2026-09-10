@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.6.0
+
+
+### New features
+
+- added rules for headings
+- added behaviour tests for new rules
+
+
 ## v0.5.1.1
 
 - Make warning message for 'commit' more consistent
@@ -18,7 +27,7 @@
 
 ## v0.4.1
 
-## new features
+### New features
 
 - added new rule for maximum sentence length
 - added behavioural tests for all existing rules
