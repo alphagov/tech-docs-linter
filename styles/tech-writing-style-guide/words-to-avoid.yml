@@ -8,7 +8,7 @@ swap:
   # main style guide
   advance: use ‘improve’ or something more specific
   collaborate: use ‘work with’
-  '(commit | pledge)': use ‘plan to [fulfill your commitment]’, or ‘we’re going to x’ where ‘x’ is a specific verb
+  pledge: use ‘we’re going to x’ where ‘x’ is a specific verb
   counter: use ‘prevent’ or try to rephrase a solution to a problem
   deliver: use ‘make’, ‘create’, ‘provide’ or a more specific term (pizzas, post and services are delivered - not abstract concepts like improvements)
   dialogue: use ‘spoke to’ or ‘discussion’

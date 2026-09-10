@@ -8,14 +8,24 @@
 - added rules for headings
 - added behaviour tests for new rules
 
+
+## v0.5.1.1
+
+- Make warning message for 'commit' more consistent
+
+## v0.5.1
+
+- Update words to avoid rule to move 'commit' to "words to avoid unless"
+- Add exceptions to acronyms list
+- bump `govuk_tech_docs` to `6.3.0`
+
 ## v0.5.0
 
-### Updates
+- added new rule for words to avoid
+- bump `govuk_tech_docs` to `6.2.4`
+- add an example [Rakefile with formatted output](Rakefile.example)
 
-- make 'commit' a word to avoid unless 
-- add new acronyms to acronym exceptions list 
-
-## v0.4.0
+## v0.4.1
 
 ### New features
 
