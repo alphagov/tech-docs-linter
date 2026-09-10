@@ -1,6 +1,6 @@
 extends: existence
 message: "Do not end section headings with terminal punctuations (such as full stops)."
-level: warning
+level: error
 scope: heading
 nonword: true
 tokens:

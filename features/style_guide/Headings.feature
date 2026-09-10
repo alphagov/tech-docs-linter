@@ -121,4 +121,4 @@ Scenario: Headings should not contain more than 65 characters
   Given the page has "a quite long header" tag
   When the linter runs against the page with the "headings-length" rule
   Then the number of messages in the linter report should be 2
-  And the error level should be "suggestion"
+  And the error level should be "warning"
