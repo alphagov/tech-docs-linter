@@ -50,31 +50,34 @@ GEM
     connection_pool (3.0.2)
     contracts (0.17.3)
     csv (3.3.6)
-    cucumber (11.1.1)
+    cucumber (12.0.0)
       base64 (~> 0.2)
       builder (~> 3.2)
-      cucumber-ci-environment (> 9, < 12)
-      cucumber-core (>= 16.2.0, < 17)
-      cucumber-cucumber-expressions (> 17, < 20)
-      cucumber-html-formatter (> 21, < 24)
-      diff-lcs (~> 1.5)
+      cucumber-ci-environment (> 9, < 14)
+      cucumber-core (>= 20, < 21)
+      cucumber-cucumber-expressions (> 17, < 21)
+      cucumber-html-formatter (> 21, < 25)
+      cucumber-query (~> 16.1)
+      diff-lcs (>= 1.5, < 3.0)
       logger (~> 1.6)
       mini_mime (~> 1.1)
-      multi_test (~> 1.1)
+      multi_test (> 1, < 4)
       sys-uname (~> 1.5)
-    cucumber-ci-environment (11.0.0)
-    cucumber-core (16.2.0)
-      cucumber-gherkin (> 36, < 40)
-      cucumber-messages (> 31, < 33)
-      cucumber-tag-expressions (> 6, < 9)
-    cucumber-cucumber-expressions (19.0.1)
+    cucumber-ci-environment (13.0.0)
+    cucumber-core (20.0.0)
+      cucumber-gherkin (> 36, < 43)
+      cucumber-messages (> 31, < 35)
+      cucumber-tag-expressions (> 6, < 12)
+    cucumber-cucumber-expressions (20.1.0)
       bigdecimal
-    cucumber-gherkin (39.1.0)
-      cucumber-messages (>= 31, < 33)
-    cucumber-html-formatter (23.1.0)
-      cucumber-messages (> 23, < 33)
-    cucumber-messages (32.3.1)
-    cucumber-tag-expressions (8.1.0)
+    cucumber-gherkin (42.0.1)
+      cucumber-messages (>= 34, < 35)
+    cucumber-html-formatter (24.2.0)
+      cucumber-messages (> 23, < 35)
+    cucumber-messages (34.2.1)
+    cucumber-query (16.1.1)
+      cucumber-messages (>= 34.1, < 36)
+    cucumber-tag-expressions (11.0.1)
     diff-lcs (1.6.2)
     dotenv (3.2.0)
     drb (2.2.3)
@@ -214,7 +217,7 @@ GEM
       drb (~> 2.0)
       prism (~> 1.5)
     multi_json (1.21.2)
-    multi_test (1.1.0)
+    multi_test (2.0.0)
     mutex_m (0.3.0)
     nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
@@ -323,7 +326,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  cucumber (~> 11.1.1)
+  cucumber (~> 12.0.0)
   govuk_tech_docs
   rspec (~> 3.13.2)
   tzinfo-data
@@ -354,14 +357,15 @@ CHECKSUMS
   connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
   contracts (0.17.3) sha256=e72e626413ea47099becb7b5683beb1c2ea902c69f5bad55c9258fe2b48314d7
   csv (3.3.6) sha256=aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456
-  cucumber (11.1.1) sha256=dedd44f4a14b50af798c13b50c3221afa41be8051f5fce666c37cd09f8564ec4
-  cucumber-ci-environment (11.0.0) sha256=0df79a9e1d0b015b3d9def680f989200d96fef206f4d19ccf86a338c4f71d1e2
-  cucumber-core (16.2.0) sha256=592b58a95cf42feef8e5a349f68e363784ba3b6568ffbcf6776e38e136cf970b
-  cucumber-cucumber-expressions (19.0.1) sha256=648ec09045190d818fb797af46e1648148599fd67a086a34a7f0e647d9e36c8c
-  cucumber-gherkin (39.1.0) sha256=aed12a0c955d8563d80a012633c1a72075525f4d64d4cc983001df2181b379ed
-  cucumber-html-formatter (23.1.0) sha256=7789b4a792c876394b9604aeb66aa5cf4c61514473b7e712c76d5eaedcdd8cdf
-  cucumber-messages (32.3.1) sha256=ddc88e4c1cf7afb96c06005b92a4a6f221a2fa435a8b4ca04677d215fd82771c
-  cucumber-tag-expressions (8.1.0) sha256=9bd8c4b6654f8e5bf2a9c99329b6f32136a75e50cd39d4cfb3927d0fa9f52e21
+  cucumber (12.0.0) sha256=89b958bd6737658a0ba245e55475d93cfa573b517759525d51e75bfdf6123796
+  cucumber-ci-environment (13.0.0) sha256=f1c110943e07f72124b43c50c98d96016a77141a4bd45ebee0b8c877d8c264fb
+  cucumber-core (20.0.0) sha256=15034c5f268e5311342d59679fb6310584db7e06e1c7a922c9138cd028dae292
+  cucumber-cucumber-expressions (20.1.0) sha256=6cc4b5880ba1c3991292579d0451af0f44814f5a1a13d7823317a09705eb15d4
+  cucumber-gherkin (42.0.1) sha256=427efa1996770fd91a6e860e3f2e8b644108682256f4189db494fe85f4595e2f
+  cucumber-html-formatter (24.2.0) sha256=6edc50730e459f9bfea0b0dadfaf4f4066d7083094382ac0d703926414c9cce0
+  cucumber-messages (34.2.1) sha256=1de715dfeaa237939b8ab008987d3fbf3118ba32a86d844fd1503396ecc5bf7e
+  cucumber-query (16.1.1) sha256=96f75ee07c892d21046ac699fb3879abab0686991af1a10a6f73ef0565b7134f
+  cucumber-tag-expressions (11.0.1) sha256=ead62a1c6bb613de1f5469975a9dd11ba2ced7322a6c8837cdde9db33dcbeac5
   diff-lcs (1.6.2) sha256=9ae0d2cba7d4df3075fe8cd8602a8604993efc0dfa934cff568969efb1909962
   dotenv (3.2.0) sha256=e375b83121ea7ca4ce20f214740076129ab8514cd81378161f11c03853fe619d
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
@@ -409,7 +413,7 @@ CHECKSUMS
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   minitest (6.0.6) sha256=153ea36d1d987a62942382b61075745042a2b3123b1cd48f4c3675af9cc7d6f1
   multi_json (1.21.2) sha256=245531eaf54bdba57aba515ff08b4503505c5e09911daa89c5a561e2f85bea8e
-  multi_test (1.1.0) sha256=e9e550cdd863fb72becfe344aefdcd4cbd26ebf307847f4a6c039a4082324d10
+  multi_test (2.0.0) sha256=5fe1bf72a3b6f65ebeb0ee5c62c6fbd4cf4e180f06e7213f02ac60847ca094e7
   mutex_m (0.3.0) sha256=cfcb04ac16b69c4813777022fdceda24e9f798e48092a2b817eb4c0a782b0751
   nokogiri (1.19.4-aarch64-linux-gnu) sha256=1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f
   nokogiri (1.19.4-aarch64-linux-musl) sha256=35c65b9ce72b3bb03207bdbe7067915019dc18c1b9b59139684bd6690fdd01af
