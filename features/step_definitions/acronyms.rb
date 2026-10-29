@@ -48,6 +48,7 @@ Given("a page contains an acronym with {string} inside") do |punctuation|
     @page = "acronym-with-fullstops"
   else
     raise NotImplementedError, "Unimplemented linter: #{punctuation}"
+  end
 end
 
 def get_acronym_filepath

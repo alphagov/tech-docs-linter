@@ -1,6 +1,8 @@
 When("the linter runs against the page with the {string} rule") do |rule_name|
   if rule_name == "acronyms"
     @file_to_be_tested = get_acronym_filepath
+  elsif rule_name == "acronyms-fullstops"
+    @file_to_be_tested = get_acronym_filepath
   elsif rule_name == "common-misspellings"
     @file_to_be_tested = get_misspelling_filepath
   elsif rule_name == "sentence-length"
@@ -10,7 +12,7 @@ When("the linter runs against the page with the {string} rule") do |rule_name|
   elsif %w[multiple-h1-tags H4 H5 H6 headings-with-no-content terminal-punctuation skipped-heading-levels consecutive-headings headings-length brackets-in-headings].include? rule_name
     @file_to_be_tested = get_headings_filepath
   else
-    raise NotImplementedError, "Unimplemented linter: #{rule_name}"
+    raise NotImplementedError, "Did not recognise rule: #{rule_name}"
   end
   # if vale finds no files it just passes.  This is to avoid false positive tests
   expect(File).to exist(@file_to_be_tested)

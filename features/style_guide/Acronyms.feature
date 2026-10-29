@@ -38,8 +38,8 @@ Feature: Acronyms that are not on the exceptions list need to be defined in full
       | 3 common 4 uncommon | half defined       | 2                  |must be defined in the first instance |
 
   Scenario: A page contains acronyms with full stops, e.g. B.B.C. not BBC
-    Given a page contains an acronym with full stops inside
-    When the linter runs against the page with the "acronyms-fullstop" rule
+    Given a page contains an acronym with "full stops" inside
+    When the linter runs against the page with the "acronyms-fullstops" rule
     Then the number of messages in the linter report should be 1
     And the error level should be "error"
     And the message should contain "acronyms must not contain full stops"
