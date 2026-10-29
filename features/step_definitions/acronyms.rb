@@ -1,5 +1,4 @@
 Given("a page contains {string} acronym") do |expected_number_of_acronyms|
-  @dir = "acronyms"
 
   case expected_number_of_acronyms
   when "a single uncommon undefined"
@@ -25,6 +24,8 @@ Given("a page contains {string} acronyms") do |types_of_acronyms|
     @page = "3-of-each"
   when "3 common 4 uncommon"
     @page = "3-common-4-not"
+  else
+    raise NotImplementedError, "Unimplemented linter: #{types_of_acronyms}"
   end
 end
 
@@ -36,6 +37,17 @@ Given("{string} of the acronyms have been defined") do |amount_of_acronyms|
     @page << "-none-defined"
   when "half defined"
     @page << "-half-defined"
+  else
+    raise NotImplementedError, "Unimplemented linter: #{amount_of_acronyms}"
+  end
+end
+
+Given("a page contains an acronym with {string} inside") do |punctuation|
+  case punctuation
+  when "full stops"
+    @page = "acronym-with-fullstops"
+  else
+    raise NotImplementedError, "Unimplemented linter: #{punctuation}"
   end
 end
 
