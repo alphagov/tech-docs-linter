@@ -32,6 +32,7 @@ The table below is a summary of the rules defined in `/styles/tech-writing-style
 | Name                       | Summary                                                                                                           | Severity level |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------|----------------|
 | `acronyms`                 | Acronyms should be defined the first time they are used.                                                          | Error          |
+| `acronyms-fullstops`       | Acronyms should not contain full stops between their letters (for example, ATM not A.T.M.).                         | Error          |
 | `common-misspellings`      | Highlight words or service names that are commonly misspelt.                                                      | Error          |
 | `brackets-in-headings`     | Check page headings for brackets.                                                                                 | Error          |
 | `consecutive-headings`     | Hilights sections that could be broken up using sub-headings.                                                     | Suggestion     |
