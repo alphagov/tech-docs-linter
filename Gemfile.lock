@@ -50,7 +50,7 @@ GEM
     connection_pool (3.0.2)
     contracts (0.17.3)
     csv (3.3.6)
-    cucumber (12.0.0)
+    cucumber (12.0.1)
       base64 (~> 0.2)
       builder (~> 3.2)
       cucumber-ci-environment (> 9, < 14)
@@ -326,7 +326,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  cucumber (~> 12.0.0)
+  cucumber (~> 12.0.1)
   govuk_tech_docs
   rspec (~> 3.13.2)
   tzinfo-data
@@ -357,7 +357,7 @@ CHECKSUMS
   connection_pool (3.0.2) sha256=33fff5ba71a12d2aa26cb72b1db8bba2a1a01823559fb01d29eb74c286e62e0a
   contracts (0.17.3) sha256=e72e626413ea47099becb7b5683beb1c2ea902c69f5bad55c9258fe2b48314d7
   csv (3.3.6) sha256=aba61e7e507a66f03d45cb1f3c4b6359861c3504038b422962875dce099e4456
-  cucumber (12.0.0) sha256=89b958bd6737658a0ba245e55475d93cfa573b517759525d51e75bfdf6123796
+  cucumber (12.0.1) sha256=21a2da0763280c97cdd706b2f5be3c1631fe97da5cedc8e0aea40f1b0fa34c8c
   cucumber-ci-environment (13.0.0) sha256=f1c110943e07f72124b43c50c98d96016a77141a4bd45ebee0b8c877d8c264fb
   cucumber-core (20.0.0) sha256=15034c5f268e5311342d59679fb6310584db7e06e1c7a922c9138cd028dae292
   cucumber-cucumber-expressions (20.1.0) sha256=6cc4b5880ba1c3991292579d0451af0f44814f5a1a13d7823317a09705eb15d4
