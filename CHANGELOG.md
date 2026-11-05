@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.6.1
+
+- updated acronyms rule to check for full stops between letters
+
 ## v0.6.0
 
 
