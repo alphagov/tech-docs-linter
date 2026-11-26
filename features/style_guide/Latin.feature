@@ -2,30 +2,85 @@
 
 # https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/style-guides/a-to-z-style-guide/#eg-etc-and-ie
 
+#TODO:: Discuss code examples/variables
 
-straight conditional not suggestions
+Feature: The style guide says you must not use Latin as we are not in ancient Rome
 
-ERROR
-SUGGESTION
-WARNING
+  Scenario Outline: A page contains a lower case latin abbreviation
+    Given the page contains the "lower case" latin abbreviation "<abbreviation>"
+    When the linter runs against the page with the "latin-abbreviations" rule
+    Then the number of messages in the linter report should be 1
+    And the error level should be "error"
+    And the message should contain "Abbreviationes Latinae in scriptis ne adhibeantur"
 
-Common Latin abbreviations used in English:
+    Examples:
+      | abbreviation |
+      | e.g |
+      | e.g. |
+      | eg |
+      | i.e. |
+      | ie |
+      | etc. |
+      | etc |
+      | et al. |
+      | et al |
+      | cf. |
+      | cf |
+      | viz. |
+      | viz |
+      | vis-à-vis |
+      | vis-a-vis |
+      | vis a vis |
+      | vs. |
+      | vs |
+      | v. |
+      | v |
+      | nb |
+      | n.b |
+      | n.b. |
 
-with and without punctuation
-not as a partial in a word
+  Scenario Outline: A page contains a lower case latin phrase
+    Given the page contains the "lower case" latin phrase "<phrase>"
+    When the linter runs against the page with the "latin-phrases" rule
+    Then the number of messages in the linter report should be 1
+    And the error level should be "error"
+    And the message should contain "Locutiones Latinae in scriptis ne adhibeantur"
 
-• e.g. (exempli gratia) – Means "for example." Use it to introduce a non-exhaustive list of examples.
-• i.e. (id est) – Means "that is" or "in other words." Use it to clarify, rephrase, or specify something just mentioned.
-• etc. (et cetera) – Means "and so forth" or "and other things of the same kind." Avoid using it alongside e.g. (since an example list is already open-ended).
-• et al. (et alii / et alia) – Means "and others." Commonly used to shorten author lists in academic citations (e.g., Smith et al.).
-• cf. (confer) – Means "compare." Used to point a reader toward a contrasting or comparative source.
-• viz. (videlicet) – Means "namely" or "that is to say." Used to introduce a complete, exhaustive list or specification.
-• vs. or v. (versus) – Means "against." Used in legal case names or competitive matchups.
-• NB (nota bene) – Means "take careful note" or "note well." Used to draw attention to an important point.
+    Examples:
+      | phrase |
+      | exempli gratia |
+      | id est |
+      | et cetera |
+      | et alia |
+      | et alii |
+      | confer |
+      | videlicet |
+      | versus |
+      | nota bene |
 
-Feature:  The style guide recommends not using Latin abbreviations as {......}
+  Scenario: A page contains an upper case latin phrase
+    Given the page contains the "upper case" latin phrase "et cetera"
+    When the linter runs against the page with the "latin-phrases" rule
+    Then the number of messages in the linter report should be 1
+    And the error level should be "error"
+    And the message should contain "Locutiones Latinae in scriptis ne adhibeantur"
 
-  Scenario: A page contains {.......}
-    Given ...{something}
-    When ....{something happens}
-    Then ...{something should responsd}
+  Scenario: A page contains an upper case latin abbreviation
+    Given the page contains the "upper case" latin abbreviation "etc"
+    When the linter runs against the page with the "latin-abbreviations" rule
+    Then the number of messages in the linter report should be 1
+    And the error level should be "error"
+    And the message should contain "Abbreviationes Latinae in scriptis ne adhibeantur"
+
+  Scenario Outline: A page contains a normal word which has part of a latin word or phrase contained within it
+    Given the page contains the latin phrase "<latin_phrase>"
+    And the phrase is contained within a plain english phrase "<english_phrase>"
+    When the linter runs against the page with the "latin-phrases" rule
+    Then the number of messages in the linter report should be 0
+
+    Examples:
+      | latin_phrase | english_phrase |
+      | id est |     intrepid establishment                 |
+      | confer |     conference                 |
+      | eg |     Gregg's steak bake                 |
+      | vs |     remember your gloves                 |
